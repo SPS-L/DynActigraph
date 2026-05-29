@@ -1,0 +1,2195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iidm:network xmlns:iidm="http://www.powsybl.org/schema/iidm/1_5" id="Nordic32_corrige" caseDate="2019-07-30T16:39:00+02:00" forecastDistance="0" sourceFormat="NF">
+    <iidm:substation id="_19fe9db0-63e5-4f87-a503-0867c0a01369" country="FR" tso="RTE">
+        <iidm:voltageLevel id="1011_130" nominalV="130" highVoltageLimit="136.5" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="1011_131" v="124.11676155292615" angle="69.417825466871804"/>
+            </iidm:busBreakerTopology>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="4011_400" nominalV="400" highVoltageLimit="420" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="4011_401" v="367.73838753850703" angle="68.507913935575459"/>
+            </iidm:busBreakerTopology>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="B11___20" nominalV="20" highVoltageLimit="21" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="B11___21" v="17.878990675688215" angle="65.056066088062792"/>
+            </iidm:busBreakerTopology>
+            <iidm:load id="11_1" loadType="UNDEFINED" p0="279.99200000000002" q0="96.314300000000003" bus="B11___21" connectableBus="B11___21" p="249.65836735086958" q="76.575841725243421"/>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="BG09__15" nominalV="15" highVoltageLimit="15.750001907348633" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="BG09__11" v="13.949027581515534" angle="75.957464304358638"/>
+            </iidm:busBreakerTopology>
+            <iidm:generator id="g09" energySource="HYDRO" minP="0" maxP="9999" voltageRegulatorOn="true" targetP="668.5" targetV="14.981999397277832" targetQ="201.25199890136719" bus="BG09__11" connectableBus="BG09__11" p="-703.77561940696353" q="-382.87187421727543">
+                <iidm:property name="genreCvg" value="AUTRE"/>
+                <iidm:reactiveCapabilityCurve>
+                    <iidm:point p="0" minQ="-1000" maxQ="1000"/>
+                    <iidm:point p="9999" minQ="-1000" maxQ="1000"/>
+                </iidm:reactiveCapabilityCurve>
+            </iidm:generator>
+        </iidm:voltageLevel>
+        <iidm:twoWindingsTransformer id="Tr1011-4011" r="0" x="1.3519998788833618" g="0" b="0" ratedU1="400" ratedU2="130" bus1="4011_401" connectableBus1="4011_401" voltageLevelId1="4011_400" bus2="1011_131" connectableBus2="1011_131" voltageLevelId2="1011_130" p1="-183.40484429883682" q1="158.57155489519312" p2="183.40484429883642" q2="-153.55014626017277">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="0" loadTapChangingCapabilities="false">
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="5551.43994140625"/>
+            <iidm:currentLimits2 permanentLimit="5551.43994140625"/>
+        </iidm:twoWindingsTransformer>
+        <iidm:twoWindingsTransformer id="Tr11-1011" r="0" x="0.10000003129243851" g="0" b="0" ratedU1="130" ratedU2="20" bus1="1011_131" connectableBus1="1011_131" voltageLevelId1="1011_130" bus2="B11___21" connectableBus2="B11___21" voltageLevelId2="B11___20" p1="249.65836739011485" q1="97.908989649433622" p2="-249.65836739011485" q2="-76.575841225252091">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="24" targetDeadband="0" loadTapChangingCapabilities="true" regulating="true" targetV="20">
+                <iidm:terminalRef id="Tr11-1011" side="TWO"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.25"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2345678806304932"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2195122241973877"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2048193216323853"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1904761791229248"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1764705181121826"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1627906560897827"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1494252681732178"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1363636255264282"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1235954761505127"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1111111640930176"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0989010334014893"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0869565010070801"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0752688646316528"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.063829779624939"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.94339627027511597"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.93457937240600586"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.92592591047286987"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.91743117570877075"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90909087657928467"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90090090036392212"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.8928571343421936"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="11547"/>
+            <iidm:currentLimits2 permanentLimit="11547"/>
+        </iidm:twoWindingsTransformer>
+        <iidm:twoWindingsTransformer id="Tr4011-g9" r="0" x="0.033750001341104507" g="0" b="0" ratedU1="400" ratedU2="15" bus1="4011_401" connectableBus1="4011_401" voltageLevelId1="4011_400" bus2="BG09__11" connectableBus2="BG09__11" voltageLevelId2="BG09__15" p1="-703.77561925799716" q1="-271.53290121612906" p2="703.77561925799705" q2="382.87187421727486">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="10" loadTapChangingCapabilities="false">
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="38490"/>
+            <iidm:currentLimits2 permanentLimit="38490"/>
+        </iidm:twoWindingsTransformer>
+    </iidm:substation>
+    <iidm:substation id="_2733fb31-de68-473c-bbb7-234a34f4d82f" country="FR" tso="RTE">
+        <iidm:voltageLevel id="1012_130" nominalV="130" highVoltageLimit="136.5" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="1012_131" v="126.06652757332714" angle="73.442242617923938"/>
+            </iidm:busBreakerTopology>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="4012_400" nominalV="400" highVoltageLimit="420" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="4012_401" v="370.87980489583646" angle="70.618323790950228"/>
+            </iidm:busBreakerTopology>
+            <iidm:shunt id="4012-Ind" sectionCount="1" voltageRegulatorOn="false" bus="4012_401" connectableBus="4012_401" q="85.969891628156731">
+                <iidm:property name="qMax" value="-100"/>
+                <iidm:shuntLinearModel bPerSection="-0.00062499998603016138" maximumSectionCount="1"/>
+            </iidm:shunt>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="B12___20" nominalV="20" highVoltageLimit="21" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="B12___21" v="18.062922097461051" angle="69.084505685350763"/>
+            </iidm:busBreakerTopology>
+            <iidm:load id="12_1" loadType="UNDEFINED" p0="420.00299999999999" q0="117.322" bus="B12___21" connectableBus="B12___21" p="380.2728916597876" q="96.175711347674593"/>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="BG01__15" nominalV="15" highVoltageLimit="15.750001907348633" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="BG01__11" v="15.000390506953064" angle="80.469253684502135"/>
+            </iidm:busBreakerTopology>
+            <iidm:generator id="g01" energySource="HYDRO" minP="0" maxP="9999" voltageRegulatorOn="true" targetP="600" targetV="16.025999069213867" targetQ="58.340000152587891" bus="BG01__11" connectableBus="BG01__11" p="-632.73971492193573" q="-200.36597389705148">
+                <iidm:property name="genreCvg" value="AUTRE"/>
+                <iidm:reactiveCapabilityCurve>
+                    <iidm:point p="0" minQ="-800" maxQ="800"/>
+                    <iidm:point p="9999" minQ="-800" maxQ="800"/>
+                </iidm:reactiveCapabilityCurve>
+            </iidm:generator>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="BG10__15" nominalV="15" highVoltageLimit="15.750001907348633" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="BG10__11" v="14.219102755796392" angle="78.733855543179857"/>
+            </iidm:busBreakerTopology>
+            <iidm:generator id="g10" energySource="HYDRO" minP="0" maxP="9999" voltageRegulatorOn="true" targetP="600" targetV="15.235500335693359" targetQ="255.70100402832031" bus="BG10__11" connectableBus="BG10__11" p="-630.23826800946711" q="-372.7872692567945">
+                <iidm:property name="genreCvg" value="AUTRE"/>
+                <iidm:reactiveCapabilityCurve>
+                    <iidm:point p="0" minQ="-800" maxQ="800"/>
+                    <iidm:point p="9999" minQ="-800" maxQ="800"/>
+                </iidm:reactiveCapabilityCurve>
+            </iidm:generator>
+        </iidm:voltageLevel>
+        <iidm:twoWindingsTransformer id="Tr1012-4012" r="0" x="1.3519998788833618" g="0" b="0" ratedU1="400" ratedU2="130" bus1="4012_401" connectableBus1="4012_401" voltageLevelId1="4012_400" bus2="1012_131" connectableBus2="1012_131" voltageLevelId2="1012_130" p1="-582.86748283980114" q1="90.702100214835426" p2="582.8674828398016" q2="-61.479303623592642">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="0" loadTapChangingCapabilities="false">
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="5551.43994140625"/>
+            <iidm:currentLimits2 permanentLimit="5551.43994140625"/>
+        </iidm:twoWindingsTransformer>
+        <iidm:twoWindingsTransformer id="Tr1012-g1" r="0" x="0.042187508195638657" g="0" b="0" ratedU1="130" ratedU2="15" bus1="1012_131" connectableBus1="1012_131" voltageLevelId1="1012_130" bus2="BG01__11" connectableBus2="BG01__11" voltageLevelId2="BG01__15" p1="-632.73971487929668" q1="-117.77537002384351" p2="632.73971487929668" q2="200.36597389705193">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="5" loadTapChangingCapabilities="false">
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="30791.998046875"/>
+            <iidm:currentLimits2 permanentLimit="30791.998046875"/>
+        </iidm:twoWindingsTransformer>
+        <iidm:twoWindingsTransformer id="Tr12-1012" r="0" x="0.066666767001152039" g="0" b="0" ratedU1="130" ratedU2="20" bus1="1012_131" connectableBus1="1012_131" voltageLevelId1="1012_130" bus2="B12___21" connectableBus2="B12___21" voltageLevelId2="B12___20" p1="380.27289167195073" q1="127.6134507369633" p2="-380.27289167195056" q2="-96.175711090370569">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="25" targetDeadband="0" loadTapChangingCapabilities="true" regulating="true" targetV="20">
+                <iidm:terminalRef id="Tr12-1012" side="TWO"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.25"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2345678806304932"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2195122241973877"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2048193216323853"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1904761791229248"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1764705181121826"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1627906560897827"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1494252681732178"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1363636255264282"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1235954761505127"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1111111640930176"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0989010334014893"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0869565010070801"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0752688646316528"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.063829779624939"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.94339627027511597"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.93457937240600586"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.92592591047286987"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.91743117570877075"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90909087657928467"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90090090036392212"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.8928571343421936"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="17320.5"/>
+            <iidm:currentLimits2 permanentLimit="17320.5"/>
+        </iidm:twoWindingsTransformer>
+        <iidm:twoWindingsTransformer id="Tr4012-g10" r="0" x="0.04218750074505806" g="0" b="0" ratedU1="400" ratedU2="15" bus1="4012_401" connectableBus1="4012_401" voltageLevelId1="4012_400" bus2="BG10__11" connectableBus2="BG10__11" voltageLevelId2="BG10__15" p1="-630.23826793778017" q1="-260.90985322557725" p2="630.23826793778028" q2="372.78726925679393">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="10" loadTapChangingCapabilities="false">
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="30792"/>
+            <iidm:currentLimits2 permanentLimit="30792"/>
+        </iidm:twoWindingsTransformer>
+    </iidm:substation>
+    <iidm:substation id="_3dd84004-1feb-4d62-bf15-4ae3dcc30bc4" country="FR" tso="RTE">
+        <iidm:voltageLevel id="1013_130" nominalV="130" highVoltageLimit="136.5" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="1013_131" v="126.1184568734532" angle="79.014665001671332"/>
+            </iidm:busBreakerTopology>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="B13___20" nominalV="20" highVoltageLimit="21" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="B13___21" v="18.162378131275947" angle="74.692456149650141"/>
+            </iidm:busBreakerTopology>
+            <iidm:load id="13_1" loadType="UNDEFINED" p0="140.00399999999999" q0="48.162399999999998" bus="B13___21" connectableBus="B13___21" p="127.68670478516614" q="40.060705287532635"/>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="BG02__15" nominalV="15" highVoltageLimit="15.750001907348633" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="BG02__11" v="14.847465222236366" angle="83.926353604416207"/>
+            </iidm:busBreakerTopology>
+            <iidm:generator id="g02" energySource="HYDRO" minP="0" maxP="9999" voltageRegulatorOn="true" targetP="300" targetV="15.847498893737793" targetQ="17.233400344848633" bus="BG02__11" connectableBus="BG02__11" p="-328.87617191853707" q="-92.06038849592295">
+                <iidm:property name="genreCvg" value="AUTRE"/>
+                <iidm:reactiveCapabilityCurve>
+                    <iidm:point p="0" minQ="-600" maxQ="600"/>
+                    <iidm:point p="9999" minQ="-600" maxQ="600"/>
+                </iidm:reactiveCapabilityCurve>
+            </iidm:generator>
+        </iidm:voltageLevel>
+        <iidm:twoWindingsTransformer id="Tr1013-g2" r="0" x="0.056250009685754776" g="0" b="0" ratedU1="130" ratedU2="15" bus1="1013_131" connectableBus1="1013_131" voltageLevelId1="1013_130" bus2="BG02__11" connectableBus2="BG02__11" voltageLevelId2="BG02__15" p1="-328.8761718910817" q1="-62.299522491542646" p2="328.8761718910817" q2="92.060388495923391">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="5" loadTapChangingCapabilities="false">
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="23094"/>
+            <iidm:currentLimits2 permanentLimit="23094"/>
+        </iidm:twoWindingsTransformer>
+        <iidm:twoWindingsTransformer id="Tr13-1013" r="0" x="0.20000006258487701" g="0" b="0" ratedU1="130" ratedU2="20" bus1="1013_131" connectableBus1="1013_131" voltageLevelId1="1013_130" bus2="B13___21" connectableBus2="B13___21" voltageLevelId2="B13___20" p1="127.68670478527117" q1="50.918711661385544" p2="-127.6867047852711" q2="-40.060705277335131">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="24" targetDeadband="0" loadTapChangingCapabilities="true" regulating="true" targetV="20">
+                <iidm:terminalRef id="Tr13-1013" side="TWO"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.25"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2345678806304932"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2195122241973877"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2048193216323853"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1904761791229248"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1764705181121826"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1627906560897827"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1494252681732178"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1363636255264282"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1235954761505127"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1111111640930176"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0989010334014893"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0869565010070801"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0752688646316528"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.063829779624939"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.94339627027511597"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.93457937240600586"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.92592591047286987"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.91743117570877075"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90909087657928467"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90090090036392212"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.8928571343421936"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="5773.5"/>
+            <iidm:currentLimits2 permanentLimit="5773.5"/>
+        </iidm:twoWindingsTransformer>
+    </iidm:substation>
+    <iidm:substation id="_6b684b57-105e-4777-b95c-3f07617803dd" country="FR" tso="RTE">
+        <iidm:voltageLevel id="1014_130" nominalV="130" highVoltageLimit="136.5" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="1014_131" v="127.60114197201631" angle="82.656738758702062"/>
+            </iidm:busBreakerTopology>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="BG03__15" nominalV="15" highVoltageLimit="15.750001907348633" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="BG03__11" v="14.898143446115714" angle="90.022716099725557"/>
+            </iidm:busBreakerTopology>
+            <iidm:generator id="g03" energySource="HYDRO" minP="0" maxP="9999" voltageRegulatorOn="true" targetP="550" targetV="15.892499923706055" targetQ="20.913200378417969" bus="BG03__11" connectableBus="BG03__11" p="-583.26959209511426" q="-91.599001149837363">
+                <iidm:property name="genreCvg" value="AUTRE"/>
+                <iidm:reactiveCapabilityCurve>
+                    <iidm:point p="0" minQ="-700" maxQ="700"/>
+                    <iidm:point p="9999" minQ="-700" maxQ="700"/>
+                </iidm:reactiveCapabilityCurve>
+            </iidm:generator>
+        </iidm:voltageLevel>
+        <iidm:twoWindingsTransformer id="Tr1014-g3" r="0" x="0.048214320093393326" g="0" b="0" ratedU1="130" ratedU2="15" bus1="1014_131" connectableBus1="1014_131" voltageLevelId1="1014_130" bus2="BG03__11" connectableBus2="BG03__11" voltageLevelId2="BG03__15" p1="-583.26959207466257" q1="-15.875376355385118" p2="583.26959207466246" q2="91.599001149837633">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="5" loadTapChangingCapabilities="false">
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="26943"/>
+            <iidm:currentLimits2 permanentLimit="26943"/>
+        </iidm:twoWindingsTransformer>
+    </iidm:substation>
+    <iidm:substation id="_aa90c941-14e3-4c16-8ed4-513a0206d631" country="FR" tso="RTE">
+        <iidm:voltageLevel id="1021_130" nominalV="130" highVoltageLimit="136.5" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="1021_131" v="114.23085186262809" angle="92.12457612606994"/>
+            </iidm:busBreakerTopology>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="BG04__15" nominalV="15" highVoltageLimit="15.750001907348633" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="BG04__11" v="13.602090719518921" angle="99.905940000021388"/>
+            </iidm:busBreakerTopology>
+            <iidm:generator id="g04" energySource="HYDRO" minP="0" maxP="9999" voltageRegulatorOn="true" targetP="400" targetV="15.508500099182129" targetQ="30.375099182128906" bus="BG04__11" connectableBus="BG04__11" p="-431.53060554903834" q="-131.29935258526214">
+                <iidm:property name="genreCvg" value="AUTRE"/>
+                <iidm:reactiveCapabilityCurve>
+                    <iidm:point p="0" minQ="-600" maxQ="600"/>
+                    <iidm:point p="9999" minQ="-600" maxQ="600"/>
+                </iidm:reactiveCapabilityCurve>
+            </iidm:generator>
+        </iidm:voltageLevel>
+        <iidm:twoWindingsTransformer id="Tr1021-g4" r="0" x="0.056250009685754776" g="0" b="0" ratedU1="130" ratedU2="15" bus1="1021_131" connectableBus1="1021_131" voltageLevelId1="1021_130" bus2="BG04__11" connectableBus2="BG04__11" voltageLevelId2="BG04__15" p1="-431.53060549821839" q1="-69.442697725837647" p2="431.53060549821845" q2="131.29935258526206">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="5" loadTapChangingCapabilities="false">
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="23094"/>
+            <iidm:currentLimits2 permanentLimit="23094"/>
+        </iidm:twoWindingsTransformer>
+    </iidm:substation>
+    <iidm:substation id="_324bf35a-84bb-4d14-b005-bbaaef147928" country="FR" tso="RTE">
+        <iidm:voltageLevel id="1022_130" nominalV="130" highVoltageLimit="136.5" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="1022_131" v="112.77262272928314" angle="58.620350873159929"/>
+            </iidm:busBreakerTopology>
+            <iidm:shunt id="1022-Cap" sectionCount="1" voltageRegulatorOn="false" bus="1022_131" connectableBus="1022_131" q="-37.626226636274261">
+                <iidm:property name="qMax" value="50"/>
+                <iidm:shuntLinearModel bPerSection="0.002958579920232296" maximumSectionCount="1"/>
+            </iidm:shunt>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="4022_400" nominalV="400" highVoltageLimit="420" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="4022_401" v="327.65054525280755" angle="56.152180859160275"/>
+            </iidm:busBreakerTopology>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="B22___20" nominalV="20" highVoltageLimit="21" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="B22___21" v="16.294272273431243" angle="53.7829382100903"/>
+            </iidm:busBreakerTopology>
+            <iidm:load id="22_1" loadType="UNDEFINED" p0="392.017" q0="111.87" bus="B22___21" connectableBus="B22___21" p="320.9178408045521" q="74.97069890288472"/>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="BG05__15" nominalV="15" highVoltageLimit="15.750001907348633" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="BG05__11" v="14.197498431363945" angle="67.481210845272912"/>
+            </iidm:busBreakerTopology>
+            <iidm:generator id="g05" energySource="HYDRO" minP="0" maxP="9999" voltageRegulatorOn="true" targetP="200" targetV="15.440999984741211" targetQ="60.0614013671875" bus="BG05__11" connectableBus="BG05__11" p="-200.75249625129126" q="-205.36974528772558">
+                <iidm:property name="genreCvg" value="AUTRE"/>
+                <iidm:reactiveCapabilityCurve>
+                    <iidm:point p="0" minQ="-250" maxQ="250"/>
+                    <iidm:point p="9999" minQ="-250" maxQ="250"/>
+                </iidm:reactiveCapabilityCurve>
+            </iidm:generator>
+        </iidm:voltageLevel>
+        <iidm:twoWindingsTransformer id="Tr1022-4022" r="0" x="2.0280842781066895" g="0" b="0" ratedU1="400" ratedU2="130" bus1="4022_401" connectableBus1="4022_401" voltageLevelId1="4022_400" bus2="1022_131" connectableBus2="1022_131" voltageLevelId2="1022_130" p1="-274.1871648734766" q1="103.51774579420487" p2="274.18716487347632" q2="-90.230687881160748">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="3" loadTapChangingCapabilities="false">
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1111111640930176"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0989010334014893"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0869565010070801"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0752688646316528"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.063829779624939"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.94339627027511597"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.93457937240600586"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.92592591047286987"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.91743117570877075"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90909087657928467"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="3700.820068359375"/>
+            <iidm:currentLimits2 permanentLimit="3700.820068359375"/>
+        </iidm:twoWindingsTransformer>
+        <iidm:twoWindingsTransformer id="Tr1022-g5" r="0" x="0.13500003516674042" g="0" b="0" ratedU1="130" ratedU2="15" bus1="1022_131" connectableBus1="1022_131" voltageLevelId1="1022_130" bus2="BG05__11" connectableBus2="BG05__11" voltageLevelId2="BG05__15" p1="-200.75249627419058" q1="-150.13022375378858" p2="200.75249627419058" q2="205.36974528772544">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="10" loadTapChangingCapabilities="false">
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="9622.5"/>
+            <iidm:currentLimits2 permanentLimit="9622.5"/>
+        </iidm:twoWindingsTransformer>
+        <iidm:twoWindingsTransformer id="Tr22-1022" r="0" x="0.071428664028644562" g="0" b="0" ratedU1="130" ratedU2="20" bus1="1022_131" connectableBus1="1022_131" voltageLevelId1="1022_130" bus2="B22___21" connectableBus2="B22___21" voltageLevelId2="B22___20" p1="320.9178437167389" q1="104.18986108156338" p2="-320.91784371673884" q2="-74.970691269602057">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="24" targetDeadband="0" loadTapChangingCapabilities="true" regulating="true" targetV="20">
+                <iidm:terminalRef id="Tr22-1022" side="TWO"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.25"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2345678806304932"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2195122241973877"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2048193216323853"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1904761791229248"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1764705181121826"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1627906560897827"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1494252681732178"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1363636255264282"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1235954761505127"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1111111640930176"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0989010334014893"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0869565010070801"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0752688646316528"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.063829779624939"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.94339627027511597"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.93457937240600586"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.92592591047286987"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.91743117570877075"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90909087657928467"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90090090036392212"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.8928571343421936"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="16165.7998046875"/>
+            <iidm:currentLimits2 permanentLimit="16165.7998046875"/>
+        </iidm:twoWindingsTransformer>
+    </iidm:substation>
+    <iidm:substation id="_22d093c3-f6da-43b4-9b8d-c13a0e2906eb" country="FR" tso="RTE">
+        <iidm:voltageLevel id="1041_130" nominalV="130" highVoltageLimit="136.5" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="1041_131" v="73.216398455129948" angle="-52.371436410304185"/>
+            </iidm:busBreakerTopology>
+            <iidm:shunt id="1041-Cap" sectionCount="1" voltageRegulatorOn="false" bus="1041_131" connectableBus="1041_131" q="-79.299429143893647">
+                <iidm:property name="qMax" value="250"/>
+                <iidm:shuntLinearModel bPerSection="0.014792900532484055" maximumSectionCount="1"/>
+            </iidm:shunt>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="B01___20" nominalV="20" highVoltageLimit="21" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="B01___21" v="10.986122062501593" angle="-59.519429353017976"/>
+            </iidm:busBreakerTopology>
+            <iidm:load id="01_1" loadType="UNDEFINED" p0="840" q0="207.47999999999999" bus="B01___21" connectableBus="B01___21" p="461.94706066826245" q="62.748317207656775"/>
+        </iidm:voltageLevel>
+        <iidm:twoWindingsTransformer id="Tr1-1041" r="0" x="0.03333326056599617" g="0" b="0" ratedU1="130" ratedU2="20" bus1="1041_131" connectableBus1="1041_131" voltageLevelId1="1041_130" bus2="B01___21" connectableBus2="B01___21" voltageLevelId2="B01___20" p1="461.95105286449456" q1="122.77496128948731" p2="-461.95105286449456" q2="-62.7514141909163">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="20" targetDeadband="0" loadTapChangingCapabilities="true" regulating="true" targetV="20">
+                <iidm:terminalRef id="Tr1-1041" side="TWO"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.25"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2345678806304932"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2195122241973877"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2048193216323853"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1904761791229248"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1764705181121826"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1627906560897827"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1494252681732178"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1363636255264282"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1235954761505127"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1111111640930176"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0989010334014893"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0869565010070801"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0752688646316528"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.063829779624939"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.94339627027511597"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.93457937240600586"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.92592591047286987"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.91743117570877075"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90909087657928467"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90090090036392212"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.8928571343421936"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="34641"/>
+            <iidm:currentLimits2 permanentLimit="34641"/>
+        </iidm:twoWindingsTransformer>
+    </iidm:substation>
+    <iidm:substation id="_1a6fe4b6-a0fc-47fa-8946-62398ab9ae75" country="FR" tso="RTE">
+        <iidm:voltageLevel id="1042_130" nominalV="130" highVoltageLimit="136.5" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="1042_131" v="102.9654438705241" angle="-23.295804456861553"/>
+            </iidm:busBreakerTopology>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="B02___20" nominalV="20" highVoltageLimit="21" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="B02___21" v="15.509639648708573" angle="-28.868168079339348"/>
+            </iidm:busBreakerTopology>
+            <iidm:load id="02_1" loadType="UNDEFINED" p0="462.036" q0="99.415800000000004" bus="B02___21" connectableBus="B02___21" p="357.85096569660982" q="59.635953574321164"/>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="BG06__15" nominalV="15" highVoltageLimit="15.750001907348633" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="BG06__11" v="13.289548444621625" angle="-10.121707384689953"/>
+            </iidm:busBreakerTopology>
+            <iidm:generator id="g06" energySource="THERMAL" minP="0" maxP="9999" voltageRegulatorOn="true" targetP="360" targetV="15.126001358032227" targetQ="138.60000610351562" bus="BG06__11" connectableBus="BG06__11" p="-406.17314145082401" q="-357.92365019792743">
+                <iidm:property name="genreCvg" value="AUTRE"/>
+                <iidm:reactiveCapabilityCurve>
+                    <iidm:point p="0" minQ="-400" maxQ="400"/>
+                    <iidm:point p="9999" minQ="-400" maxQ="400"/>
+                </iidm:reactiveCapabilityCurve>
+            </iidm:generator>
+        </iidm:voltageLevel>
+        <iidm:twoWindingsTransformer id="Tr1042-g6" r="0" x="0.084375016391277313" g="0" b="0" ratedU1="130" ratedU2="15" bus1="1042_131" connectableBus1="1042_131" voltageLevelId1="1042_130" bus2="BG06__11" connectableBus2="BG06__11" voltageLevelId2="BG06__15" p1="-406.17314145082395" q1="-217.90417816916187" p2="406.17314145082401" q2="357.9236501979276">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="10" loadTapChangingCapabilities="false">
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="15395.9990234375"/>
+            <iidm:currentLimits2 permanentLimit="15395.9990234375"/>
+        </iidm:twoWindingsTransformer>
+        <iidm:twoWindingsTransformer id="Tr2-1042" r="0" x="0.066666767001152039" g="0" b="0" ratedU1="130" ratedU2="20" bus1="1042_131" connectableBus1="1042_131" voltageLevelId1="1042_130" bus2="B02___21" connectableBus2="B02___21" voltageLevelId2="B02___20" p1="357.85114023410682" q1="96.111987398497803" p2="-357.85114023410677" q2="-59.635947039071866">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="20" targetDeadband="0" loadTapChangingCapabilities="true" regulating="true" targetV="20">
+                <iidm:terminalRef id="Tr2-1042" side="TWO"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.25"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2345678806304932"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2195122241973877"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2048193216323853"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1904761791229248"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1764705181121826"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1627906560897827"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1494252681732178"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1363636255264282"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1235954761505127"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1111111640930176"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0989010334014893"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0869565010070801"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0752688646316528"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.063829779624939"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.94339627027511597"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.93457937240600586"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.92592591047286987"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.91743117570877075"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90909087657928467"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90090090036392212"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.8928571343421936"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="17320.5"/>
+            <iidm:currentLimits2 permanentLimit="17320.5"/>
+        </iidm:twoWindingsTransformer>
+    </iidm:substation>
+    <iidm:substation id="_24b8bbc5-1f71-4d9f-a22f-2c1a9dc6b44b" country="FR" tso="RTE">
+        <iidm:voltageLevel id="1043_130" nominalV="130" highVoltageLimit="136.5" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="1043_131" v="80.932376825427127" angle="-40.563765069185941"/>
+            </iidm:busBreakerTopology>
+            <iidm:shunt id="1043-Cap" sectionCount="1" voltageRegulatorOn="false" bus="1043_131" connectableBus="1043_131" q="-77.515253008223155">
+                <iidm:property name="qMax" value="200"/>
+                <iidm:shuntLinearModel bPerSection="0.011834300123155117" maximumSectionCount="1"/>
+            </iidm:shunt>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="B03___20" nominalV="20" highVoltageLimit="21" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="B03___21" v="11.919612979020345" angle="-47.958511320401023"/>
+            </iidm:busBreakerTopology>
+            <iidm:load id="03_1" loadType="UNDEFINED" p0="364" q0="117.379" bus="B03___21" connectableBus="B03___21" p="217.49025612895366" q="41.905135318455756"/>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="BG07__15" nominalV="15" highVoltageLimit="15.750001907348633" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="BG07__11" v="12.50768917993455" angle="-22.070660304856439"/>
+            </iidm:busBreakerTopology>
+            <iidm:generator id="g07" energySource="THERMAL" minP="0" maxP="9999" voltageRegulatorOn="true" targetP="180" targetV="15.211499214172363" targetQ="60.400001525878906" bus="BG07__11" connectableBus="BG07__11" p="-209.09052647695381" q="-301.90950770838094">
+                <iidm:property name="genreCvg" value="AUTRE"/>
+                <iidm:reactiveCapabilityCurve>
+                    <iidm:point p="0" minQ="-200" maxQ="200"/>
+                    <iidm:point p="9999" minQ="-200" maxQ="200"/>
+                </iidm:reactiveCapabilityCurve>
+            </iidm:generator>
+        </iidm:voltageLevel>
+        <iidm:twoWindingsTransformer id="Tr1043-g7" r="0" x="0.16875003278255463" g="0" b="0" ratedU1="130" ratedU2="15" bus1="1043_131" connectableBus1="1043_131" voltageLevelId1="1043_130" bus2="BG07__11" connectableBus2="BG07__11" voltageLevelId2="BG07__15" p1="-209.09052647695376" q1="-156.43085726710402" p2="209.09052647695381" q2="301.90950770838094">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="10" loadTapChangingCapabilities="false">
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="7697.99951171875"/>
+            <iidm:currentLimits2 permanentLimit="7697.99951171875"/>
+        </iidm:twoWindingsTransformer>
+        <iidm:twoWindingsTransformer id="Tr3-1043" r="0" x="0.08695647120475769" g="0" b="0" ratedU1="130" ratedU2="20" bus1="1043_131" connectableBus1="1043_131" voltageLevelId1="1043_130" bus2="B03___21" connectableBus2="B03___21" voltageLevelId2="B03___20" p1="217.49140555867709" q1="71.931366455397068" p2="-217.49140555867729" q2="-41.905694357485245">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="21" targetDeadband="0" loadTapChangingCapabilities="true" regulating="true" targetV="20">
+                <iidm:terminalRef id="Tr3-1043" side="TWO"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.25"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2345678806304932"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2195122241973877"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2048193216323853"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1904761791229248"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1764705181121826"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1627906560897827"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1494252681732178"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1363636255264282"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1235954761505127"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1111111640930176"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0989010334014893"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0869565010070801"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0752688646316528"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.063829779624939"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.94339627027511597"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.93457937240600586"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.92592591047286987"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.91743117570877075"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90909087657928467"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90090090036392212"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.8928571343421936"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="13279.0986328125"/>
+            <iidm:currentLimits2 permanentLimit="13279.0986328125"/>
+        </iidm:twoWindingsTransformer>
+    </iidm:substation>
+    <iidm:substation id="_7340d87a-6fed-416e-9c35-eeb8aecb61e7" country="FR" tso="RTE">
+        <iidm:voltageLevel id="1044_130" nominalV="130" highVoltageLimit="136.5" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="1044_131" v="82.07193437252316" angle="-24.473334879433061"/>
+            </iidm:busBreakerTopology>
+            <iidm:shunt id="1044-Cap" sectionCount="1" voltageRegulatorOn="false" bus="1044_131" connectableBus="1044_131" q="-79.713507309711503">
+                <iidm:property name="qMax" value="200"/>
+                <iidm:shuntLinearModel bPerSection="0.011834300123155117" maximumSectionCount="1"/>
+            </iidm:shunt>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="4044_400" nominalV="400" highVoltageLimit="420" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="4044_401" v="265.01268107134126" angle="-17.494573332935545"/>
+            </iidm:busBreakerTopology>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="B04___20" nominalV="20" highVoltageLimit="21" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="B04___21" v="12.39544844556111" angle="-31.093930800298669"/>
+            </iidm:busBreakerTopology>
+            <iidm:load id="04_1" loadType="UNDEFINED" p0="1176" q0="352.80000000000001" bus="B04___21" connectableBus="B04___21" p="729.07862037575569" q="135.60092721658549"/>
+        </iidm:voltageLevel>
+        <iidm:twoWindingsTransformer id="Tr1044-4044a" r="0" x="1.6899998188018799" g="0" b="0" ratedU1="400" ratedU2="130" bus1="4044_401" connectableBus1="4044_401" voltageLevelId1="4044_400" bus2="1044_131" connectableBus2="1044_131" voltageLevelId2="1044_130" p1="493.40343366392528" q1="106.70896371059351" p2="-493.40343366392545" q2="-45.117860971982068">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="8" loadTapChangingCapabilities="false">
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="4441.16015625"/>
+            <iidm:currentLimits2 permanentLimit="4441.16015625"/>
+        </iidm:twoWindingsTransformer>
+        <iidm:twoWindingsTransformer id="Tr1044-4044b" r="0" x="1.6899998188018799" g="0" b="0" ratedU1="400" ratedU2="130" bus1="4044_401" connectableBus1="4044_401" voltageLevelId1="4044_400" bus2="1044_131" connectableBus2="1044_131" voltageLevelId2="1044_130" p1="493.40343366392528" q1="106.70896371059351" p2="-493.40343366392545" q2="-45.117860971982068">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="8" loadTapChangingCapabilities="false">
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="4441.16015625"/>
+            <iidm:currentLimits2 permanentLimit="4441.16015625"/>
+        </iidm:twoWindingsTransformer>
+        <iidm:twoWindingsTransformer id="Tr4-1044" r="0" x="0.025000007823109627" g="0" b="0" ratedU1="130" ratedU2="20" bus1="1044_131" connectableBus1="1044_131" voltageLevelId1="1044_130" bus2="B04___21" connectableBus2="B04___21" voltageLevelId2="B04___20" p1="729.08096439547626" q1="225.08376382442563" p2="-729.08096439547614" q2="-135.60162044571248">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="19" targetDeadband="0" loadTapChangingCapabilities="true" regulating="true" targetV="20">
+                <iidm:terminalRef id="Tr4-1044" side="TWO"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.25"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2345678806304932"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2195122241973877"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2048193216323853"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1904761791229248"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1764705181121826"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1627906560897827"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1494252681732178"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1363636255264282"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1235954761505127"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1111111640930176"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0989010334014893"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0869565010070801"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0752688646316528"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.063829779624939"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.94339627027511597"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.93457937240600586"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.92592591047286987"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.91743117570877075"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90909087657928467"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90090090036392212"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.8928571343421936"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="46188"/>
+            <iidm:currentLimits2 permanentLimit="46188"/>
+        </iidm:twoWindingsTransformer>
+    </iidm:substation>
+    <iidm:substation id="_5f6d1041-5474-4195-827d-fc726fd21075" country="FR" tso="RTE">
+        <iidm:voltageLevel id="1045_130" nominalV="130" highVoltageLimit="136.5" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="1045_131" v="82.103406652790611" angle="-31.044574937642079"/>
+            </iidm:busBreakerTopology>
+            <iidm:shunt id="1045-Cap" sectionCount="1" voltageRegulatorOn="false" bus="1045_131" connectableBus="1045_131" q="-79.77465481117919">
+                <iidm:property name="qMax" value="200"/>
+                <iidm:shuntLinearModel bPerSection="0.011834300123155117" maximumSectionCount="1"/>
+            </iidm:shunt>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="4045_400" nominalV="400" highVoltageLimit="420" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="4045_401" v="269.08662221671943" angle="-25.270758043557343"/>
+            </iidm:busBreakerTopology>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="B05___20" nominalV="20" highVoltageLimit="21" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="B05___21" v="12.312052843334698" angle="-37.616218115664807"/>
+            </iidm:busBreakerTopology>
+            <iidm:load id="05_1" loadType="UNDEFINED" p0="1008" q0="266.56" bus="B05___21" connectableBus="B05___21" p="622.93764437174173" q="101.80358409231552"/>
+        </iidm:voltageLevel>
+        <iidm:twoWindingsTransformer id="Tr1045-4045a" r="0" x="1.6899998188018799" g="0" b="0" ratedU1="400" ratedU2="130" bus1="4045_401" connectableBus1="4045_401" voltageLevelId1="4045_400" bus2="1045_131" connectableBus2="1045_131" voltageLevelId2="1045_130" p1="410.98099884577107" q1="119.55119092573241" p2="-410.98099884577061" q2="-75.766449609431021">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="9" loadTapChangingCapabilities="false">
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="4441.16015625"/>
+            <iidm:currentLimits2 permanentLimit="4441.16015625"/>
+        </iidm:twoWindingsTransformer>
+        <iidm:twoWindingsTransformer id="Tr1045-4045b" r="0" x="1.6899998188018799" g="0" b="0" ratedU1="400" ratedU2="130" bus1="4045_401" connectableBus1="4045_401" voltageLevelId1="4045_400" bus2="1045_131" connectableBus2="1045_131" voltageLevelId2="1045_130" p1="410.98099884577107" q1="119.55119092573241" p2="-410.98099884577061" q2="-75.766449609431021">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="9" loadTapChangingCapabilities="false">
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="4441.16015625"/>
+            <iidm:currentLimits2 permanentLimit="4441.16015625"/>
+        </iidm:twoWindingsTransformer>
+        <iidm:twoWindingsTransformer id="Tr5-1045" r="0" x="0.028571369126439095" g="0" b="0" ratedU1="130" ratedU2="20" bus1="1045_131" connectableBus1="1045_131" voltageLevelId1="1045_130" bus2="B05___21" connectableBus2="B05___21" voltageLevelId2="B05___20" p1="622.93961045988476" q1="176.89881127019288" p2="-622.93961045988476" q2="-101.80417865220784">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="20" targetDeadband="0" loadTapChangingCapabilities="true" regulating="true" targetV="20">
+                <iidm:terminalRef id="Tr5-1045" side="TWO"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.25"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2345678806304932"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2195122241973877"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2048193216323853"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1904761791229248"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1764705181121826"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1627906560897827"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1494252681732178"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1363636255264282"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1235954761505127"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1111111640930176"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0989010334014893"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0869565010070801"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0752688646316528"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.063829779624939"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.94339627027511597"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.93457937240600586"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.92592591047286987"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.91743117570877075"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90909087657928467"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90090090036392212"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.8928571343421936"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="40414.5"/>
+            <iidm:currentLimits2 permanentLimit="40414.5"/>
+        </iidm:twoWindingsTransformer>
+    </iidm:substation>
+    <iidm:substation id="_1b2ccb49-0d4d-4dd1-b38d-4820f4ecacd5" country="FR" tso="RTE">
+        <iidm:voltageLevel id="2031_220" nominalV="220" highVoltageLimit="231" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="2031_221" v="173.5536890180129" angle="37.913665298672505"/>
+            </iidm:busBreakerTopology>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="4031_400" nominalV="400" highVoltageLimit="420" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="4031_401" v="310.43672072069444" angle="33.668107871693529"/>
+            </iidm:busBreakerTopology>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="B31___20" nominalV="20" highVoltageLimit="21" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="B31___21" v="15.296733038891002" angle="32.792987799319029"/>
+            </iidm:busBreakerTopology>
+            <iidm:load id="31_1" loadType="UNDEFINED" p0="140.01300000000001" q0="34.585900000000002" bus="B31___21" connectableBus="B31___21" p="106.63870538545299" q="20.062825101088482"/>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="BG12__15" nominalV="15" highVoltageLimit="15.750001907348633" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="BG12__11" v="13.804764198103122" angle="43.394347392734403"/>
+            </iidm:busBreakerTopology>
+            <iidm:generator id="g12" energySource="HYDRO" minP="0" maxP="9999" voltageRegulatorOn="true" targetP="310" targetV="15.300000190734863" targetQ="98.300003051757812" bus="BG12__11" connectableBus="BG12__11" p="-268.14701621955925" q="-411.88730185654396">
+                <iidm:property name="genreCvg" value="AUTRE"/>
+                <iidm:reactiveCapabilityCurve>
+                    <iidm:point p="0" minQ="-350" maxQ="350"/>
+                    <iidm:point p="9999" minQ="-350" maxQ="350"/>
+                </iidm:reactiveCapabilityCurve>
+            </iidm:generator>
+        </iidm:voltageLevel>
+        <iidm:twoWindingsTransformer id="Tr2031-4031" r="0" x="5.8082423210144043" g="0" b="0" ratedU1="400" ratedU2="220" bus1="4031_401" connectableBus1="4031_401" voltageLevelId1="4031_400" bus2="2031_221" connectableBus2="2031_221" voltageLevelId2="2031_220" p1="-377.69347905651489" q1="-68.706212004932695" p2="377.69347905651483" q2="98.068563004257769">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="0" loadTapChangingCapabilities="false">
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="2186.85009765625"/>
+            <iidm:currentLimits2 permanentLimit="2186.85009765625"/>
+        </iidm:twoWindingsTransformer>
+        <iidm:twoWindingsTransformer id="Tr31-2031" r="0" x="0.20000001788139343" g="0" b="0" ratedU1="220" ratedU2="20" bus1="2031_221" connectableBus1="2031_221" voltageLevelId1="2031_220" bus2="B31___21" connectableBus2="B31___21" voltageLevelId2="B31___20" p1="106.63872162768469" q1="30.126766155816021" p2="-106.6387216276848" q2="-20.062804424138651">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="21" targetDeadband="0" loadTapChangingCapabilities="true" regulating="true" targetV="20">
+                <iidm:terminalRef id="Tr31-2031" side="TWO"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.25"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2345678806304932"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2195122241973877"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2048193216323853"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1904761791229248"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1764705181121826"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1627906560897827"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1494252681732178"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1363636255264282"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1235954761505127"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1111111640930176"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0989010334014893"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0869565010070801"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0752688646316528"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.063829779624939"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.94339627027511597"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.93457937240600586"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.92592591047286987"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.91743117570877075"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90909087657928467"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90090090036392212"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.8928571343421936"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="5773.50048828125"/>
+            <iidm:currentLimits2 permanentLimit="5773.50048828125"/>
+        </iidm:twoWindingsTransformer>
+        <iidm:twoWindingsTransformer id="Tr4031-g12" r="0" x="0.096428543329238892" g="0" b="0" ratedU1="400" ratedU2="15" bus1="4031_401" connectableBus1="4031_401" voltageLevelId1="4031_400" bus2="BG12__11" connectableBus2="BG12__11" voltageLevelId2="BG12__15" p1="-268.14701531653054" q1="-289.66180747172234" p2="268.1470153165306" q2="411.8873018565439">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="10" loadTapChangingCapabilities="false">
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="13471.5"/>
+            <iidm:currentLimits2 permanentLimit="13471.5"/>
+        </iidm:twoWindingsTransformer>
+    </iidm:substation>
+    <iidm:substation id="_246f192c-6bd3-44d2-ba84-1b829b731743" country="FR" tso="RTE">
+        <iidm:voltageLevel id="2032_220" nominalV="220" highVoltageLimit="231" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="2032_221" v="206.14900525471242" angle="54.443094024847049"/>
+            </iidm:busBreakerTopology>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="B32___20" nominalV="20" highVoltageLimit="21" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="B32___21" v="17.382268669853691" angle="49.89127625541861"/>
+            </iidm:busBreakerTopology>
+            <iidm:load id="32_1" loadType="UNDEFINED" p0="279.99599999999998" q0="55.438600000000001" bus="B32___21" connectableBus="B32___21" p="243.89024722839682" q="42.062731144362672"/>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="BG08__15" nominalV="15" highVoltageLimit="15.750001907348633" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="BG08__11" v="14.65347423132375" angle="63.203481203579479"/>
+            </iidm:busBreakerTopology>
+            <iidm:generator id="g08" energySource="HYDRO" minP="0" maxP="9999" voltageRegulatorOn="true" targetP="750" targetV="15.746999740600586" targetQ="232.60000610351562" bus="BG08__11" connectableBus="BG08__11" p="-752.40789155605887" q="-525.28407496031309">
+                <iidm:property name="genreCvg" value="AUTRE"/>
+                <iidm:reactiveCapabilityCurve>
+                    <iidm:point p="0" minQ="-850" maxQ="850"/>
+                    <iidm:point p="9999" minQ="-850" maxQ="850"/>
+                </iidm:reactiveCapabilityCurve>
+            </iidm:generator>
+        </iidm:voltageLevel>
+        <iidm:twoWindingsTransformer id="Tr2032-g8" r="0" x="0.039705898612737656" g="0" b="0" ratedU1="220" ratedU2="15" bus1="2032_221" connectableBus1="2032_221" voltageLevelId1="2032_220" bus2="BG08__11" connectableBus2="BG08__11" voltageLevelId2="BG08__15" p1="-752.40789179262129" q1="-369.57746290315271" p2="752.40789179262106" q2="525.28407496031309">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="10" loadTapChangingCapabilities="false">
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="32716.505859375"/>
+            <iidm:currentLimits2 permanentLimit="32716.505859375"/>
+        </iidm:twoWindingsTransformer>
+        <iidm:twoWindingsTransformer id="Tr32-2032" r="0" x="0.10000000894069672" g="0" b="0" ratedU1="220" ratedU2="20" bus1="2032_221" connectableBus1="2032_221" voltageLevelId1="2032_220" bus2="B32___21" connectableBus2="B32___21" voltageLevelId2="B32___20" p1="243.89024954193798" q1="62.33513917413962" p2="-243.8902495419382" q2="-42.062725569126293">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="26" targetDeadband="0" loadTapChangingCapabilities="true" regulating="true" targetV="20">
+                <iidm:terminalRef id="Tr32-2032" side="TWO"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.25"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2345678806304932"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2195122241973877"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2048193216323853"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1904761791229248"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1764705181121826"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1627906560897827"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1494252681732178"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1363636255264282"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1235954761505127"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1111111640930176"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0989010334014893"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0869565010070801"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0752688646316528"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.063829779624939"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.94339627027511597"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.93457937240600586"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.92592591047286987"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.91743117570877075"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90909087657928467"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90090090036392212"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.8928571343421936"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="11547.0009765625"/>
+            <iidm:currentLimits2 permanentLimit="11547.0009765625"/>
+        </iidm:twoWindingsTransformer>
+    </iidm:substation>
+    <iidm:substation id="_4cd377f5-06b5-4996-862c-81be74364057" country="FR" tso="RTE">
+        <iidm:voltageLevel id="4021_400" nominalV="400" highVoltageLimit="420" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="4021_401" v="324.60568836026954" angle="37.297047498873994"/>
+            </iidm:busBreakerTopology>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="BG11__15" nominalV="15" highVoltageLimit="15.750001907348633" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="BG11__11" v="13.8590593784193" angle="46.373456114103689"/>
+            </iidm:busBreakerTopology>
+            <iidm:generator id="g11" energySource="HYDRO" minP="0" maxP="9999" voltageRegulatorOn="true" targetP="250" targetV="15.316498756408691" targetQ="60.700000762939453" bus="BG11__11" connectableBus="BG11__11" p="-225.2956501711738" q="-297.03435141696519">
+                <iidm:property name="genreCvg" value="AUTRE"/>
+                <iidm:reactiveCapabilityCurve>
+                    <iidm:point p="0" minQ="-300" maxQ="300"/>
+                    <iidm:point p="9999" minQ="-300" maxQ="300"/>
+                </iidm:reactiveCapabilityCurve>
+            </iidm:generator>
+        </iidm:voltageLevel>
+        <iidm:twoWindingsTransformer id="Tr4021-g11" r="0" x="0.11250000447034836" g="0" b="0" ratedU1="400" ratedU2="15" bus1="4021_401" connectableBus1="4021_401" voltageLevelId1="4021_400" bus2="BG11__11" connectableBus2="BG11__11" voltageLevelId2="BG11__15" p1="-225.29564965171858" q1="-215.62751393824814" p2="225.29564965171843" q2="297.03435141696548">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="10" loadTapChangingCapabilities="false">
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="11547"/>
+            <iidm:currentLimits2 permanentLimit="11547"/>
+        </iidm:twoWindingsTransformer>
+    </iidm:substation>
+    <iidm:substation id="_250c159b-fc90-488e-835c-a7fa3b1f7127" country="FR" tso="RTE">
+        <iidm:voltageLevel id="4032_400" nominalV="400" highVoltageLimit="420" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="4032_401" v="308.04320416734623" angle="29.058656891009033"/>
+            </iidm:busBreakerTopology>
+        </iidm:voltageLevel>
+    </iidm:substation>
+    <iidm:substation id="_6beeabdc-bc7d-4855-acaa-56ca82cee88c" country="FR" tso="RTE">
+        <iidm:voltageLevel id="4041_400" nominalV="400" highVoltageLimit="420" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="4041_401" v="284.74660508593826" angle="5.498652098575957"/>
+            </iidm:busBreakerTopology>
+            <iidm:shunt id="4041-Cap" sectionCount="1" voltageRegulatorOn="false" bus="4041_401" connectableBus="4041_401" q="-101.35078411959246">
+                <iidm:property name="qMax" value="200"/>
+                <iidm:shuntLinearModel bPerSection="0.0012499999720603228" maximumSectionCount="1"/>
+            </iidm:shunt>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="B41___20" nominalV="20" highVoltageLimit="21" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="B41___21" v="13.387974628196959" angle="-0.39016253960763442"/>
+            </iidm:busBreakerTopology>
+            <iidm:load id="41_1" loadType="UNDEFINED" p0="756" q0="183.96000000000001" bus="B41___21" connectableBus="B41___21" p="507.70858350200922" q="82.967656175476279"/>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="BG13__15" nominalV="15" highVoltageLimit="15.750001907348633" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="BG13__11" v="12.318454046276189" angle="5.0684900090577187"/>
+            </iidm:busBreakerTopology>
+            <iidm:generator id="g13" energySource="OTHER" minP="0" maxP="9999" voltageRegulatorOn="true" targetP="3.3464001347738304e-08" targetV="15.255000114440918" targetQ="50.099998474121094" bus="BG13__11" connectableBus="BG13__11" p="12.540105834162901" q="-353.0008689085023">
+                <iidm:property name="genreCvg" value="AUTRE"/>
+                <iidm:reactiveCapabilityCurve>
+                    <iidm:point p="0" minQ="-300" maxQ="300"/>
+                    <iidm:point p="9999" minQ="-300" maxQ="300"/>
+                </iidm:reactiveCapabilityCurve>
+            </iidm:generator>
+        </iidm:voltageLevel>
+        <iidm:twoWindingsTransformer id="Tr4041-g13" r="0" x="0.07499995082616806" g="0" b="0" ratedU1="400" ratedU2="15" bus1="4041_401" connectableBus1="4041_401" voltageLevelId1="4041_400" bus2="BG13__11" connectableBus2="BG13__11" voltageLevelId2="BG13__15" p1="12.540105834162881" q1="-291.33457686098927" p2="-12.54010583416289" q2="353.00086890850218">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="10" loadTapChangingCapabilities="false">
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="11547"/>
+            <iidm:currentLimits2 permanentLimit="11547"/>
+        </iidm:twoWindingsTransformer>
+        <iidm:twoWindingsTransformer id="Tr41-4041" r="0" x="0.037037000060081482" g="0" b="0" ratedU1="400" ratedU2="20" bus1="4041_401" connectableBus1="4041_401" voltageLevelId1="4041_400" bus2="B41___21" connectableBus2="B41___21" voltageLevelId2="B41___20" p1="507.7087858939521" q1="137.65388227043474" p2="-507.70878589395198" q2="-82.967289673771035">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="24" targetDeadband="0" loadTapChangingCapabilities="true" regulating="true" targetV="20">
+                <iidm:terminalRef id="Tr41-4041" side="TWO"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.25"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2345678806304932"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2195122241973877"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2048193216323853"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1904761791229248"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1764705181121826"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1627906560897827"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1494252681732178"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1363636255264282"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1235954761505127"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1111111640930176"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0989010334014893"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0869565010070801"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0752688646316528"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.063829779624939"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.94339627027511597"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.93457937240600586"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.92592591047286987"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.91743117570877075"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90909087657928467"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90090090036392212"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.8928571343421936"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="31176.900390625"/>
+            <iidm:currentLimits2 permanentLimit="31176.900390625"/>
+        </iidm:twoWindingsTransformer>
+    </iidm:substation>
+    <iidm:substation id="_2f74dc4b-0891-4aac-8370-b0477b6f163c" country="FR" tso="RTE">
+        <iidm:voltageLevel id="4042_400" nominalV="400" highVoltageLimit="420" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="4042_401" v="282.91574484061579" angle="-0.66938800300270329"/>
+            </iidm:busBreakerTopology>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="B42___20" nominalV="20" highVoltageLimit="21" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="B42___21" v="13.360829644805136" angle="-6.54811370712802"/>
+            </iidm:busBreakerTopology>
+            <iidm:load id="42_1" loadType="UNDEFINED" p0="560" q0="178.36000000000001" bus="B42___21" connectableBus="B42___21" p="375.88180898775767" q="80.357057648998335"/>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="BG14__15" nominalV="15" highVoltageLimit="15.750001907348633" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="BG14__11" v="13.388175962026532" angle="12.762073863710055"/>
+            </iidm:busBreakerTopology>
+            <iidm:generator id="g14" energySource="THERMAL" minP="0" maxP="9999" voltageRegulatorOn="true" targetP="630" targetV="15.680998802185059" targetQ="295.89999389648438" bus="BG14__11" connectableBus="BG14__11" p="-651.71922647547638" q="-988.65600220903752">
+                <iidm:property name="genreCvg" value="AUTRE"/>
+                <iidm:reactiveCapabilityCurve>
+                    <iidm:point p="0" minQ="-700" maxQ="700"/>
+                    <iidm:point p="9999" minQ="-700" maxQ="700"/>
+                </iidm:reactiveCapabilityCurve>
+            </iidm:generator>
+        </iidm:voltageLevel>
+        <iidm:twoWindingsTransformer id="Tr4042-g14" r="0" x="0.048214271664619446" g="0" b="0" ratedU1="400" ratedU2="15" bus1="4042_401" connectableBus1="4042_401" voltageLevelId1="4042_400" bus2="BG14__11" connectableBus2="BG14__11" voltageLevelId2="BG14__15" p1="-651.71922647547626" q1="-611.48687698736205" p2="651.71922647547649" q2="988.65600220903696">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="10" loadTapChangingCapabilities="false">
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="26943"/>
+            <iidm:currentLimits2 permanentLimit="26943"/>
+        </iidm:twoWindingsTransformer>
+        <iidm:twoWindingsTransformer id="Tr42-4042" r="0" x="0.050000004470348358" g="0" b="0" ratedU1="400" ratedU2="20" bus1="4042_401" connectableBus1="4042_401" voltageLevelId1="4042_400" bus2="B42___21" connectableBus2="B42___21" voltageLevelId2="B42___20" p1="375.88206109413318" q1="121.73912218290161" p2="-375.88206109413318" q2="-80.356820967414677">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="23" targetDeadband="0" loadTapChangingCapabilities="true" regulating="true" targetV="20">
+                <iidm:terminalRef id="Tr42-4042" side="TWO"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.25"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2345678806304932"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2195122241973877"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2048193216323853"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1904761791229248"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1764705181121826"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1627906560897827"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1494252681732178"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1363636255264282"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1235954761505127"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1111111640930176"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0989010334014893"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0869565010070801"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0752688646316528"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.063829779624939"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.94339627027511597"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.93457937240600586"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.92592591047286987"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.91743117570877075"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90909087657928467"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90090090036392212"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.8928571343421936"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="23094"/>
+            <iidm:currentLimits2 permanentLimit="23094"/>
+        </iidm:twoWindingsTransformer>
+    </iidm:substation>
+    <iidm:substation id="_1dc18166-693f-476d-936b-58b4d6a84a2e" country="FR" tso="RTE">
+        <iidm:voltageLevel id="4043_400" nominalV="400" highVoltageLimit="420" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="4043_401" v="276.8801063828634" angle="-13.959276957341677"/>
+            </iidm:busBreakerTopology>
+            <iidm:shunt id="4043-Cap" sectionCount="1" voltageRegulatorOn="false" bus="4043_401" connectableBus="4043_401" q="-95.828239496304079">
+                <iidm:property name="qMax" value="200"/>
+                <iidm:shuntLinearModel bPerSection="0.0012499999720603228" maximumSectionCount="1"/>
+            </iidm:shunt>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="B43___20" nominalV="20" highVoltageLimit="21" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="B43___21" v="13.238889435099907" angle="-19.871913254909057"/>
+            </iidm:busBreakerTopology>
+            <iidm:load id="43_1" loadType="UNDEFINED" p0="1260" q0="356.44" bus="B43___21" connectableBus="B43___21" p="832.93762496267266" q="155.76515270738577"/>
+        </iidm:voltageLevel>
+        <iidm:twoWindingsTransformer id="Tr43-4043" r="0" x="0.022222226485610008" g="0" b="0" ratedU1="400" ratedU2="20" bus1="4043_401" connectableBus1="4043_401" voltageLevelId1="4043_400" bus2="B43___21" connectableBus2="B43___21" voltageLevelId2="B43___20" p1="832.9386523106233" q1="246.80645271582699" p2="-832.93865231062284" q2="-155.76506357177854">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="22" targetDeadband="0" loadTapChangingCapabilities="true" regulating="true" targetV="20">
+                <iidm:terminalRef id="Tr43-4043" side="TWO"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.25"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2345678806304932"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2195122241973877"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2048193216323853"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1904761791229248"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1764705181121826"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1627906560897827"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1494252681732178"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1363636255264282"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1235954761505127"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1111111640930176"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0989010334014893"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0869565010070801"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0752688646316528"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.063829779624939"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.94339627027511597"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.93457937240600586"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.92592591047286987"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.91743117570877075"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90909087657928467"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90090090036392212"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.8928571343421936"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="51961.5"/>
+            <iidm:currentLimits2 permanentLimit="51961.5"/>
+        </iidm:twoWindingsTransformer>
+    </iidm:substation>
+    <iidm:substation id="_0e568cec-921e-44a2-9e15-322dccf608de" country="FR" tso="RTE">
+        <iidm:voltageLevel id="4046_400" nominalV="400" highVoltageLimit="420" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="4046_401" v="284.87170411767028" angle="-14.597108057999407"/>
+            </iidm:busBreakerTopology>
+            <iidm:shunt id="4046-Cap" sectionCount="1" voltageRegulatorOn="false" bus="4046_401" connectableBus="4046_401" q="-50.719928745637155">
+                <iidm:property name="qMax" value="100"/>
+                <iidm:shuntLinearModel bPerSection="0.00062499998603016138" maximumSectionCount="1"/>
+            </iidm:shunt>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="B46___20" nominalV="20" highVoltageLimit="21" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="B46___21" v="13.605127487702259" angle="-20.35631252664184"/>
+            </iidm:busBreakerTopology>
+            <iidm:load id="46_1" loadType="UNDEFINED" p0="980" q0="296.51999999999998" bus="B46___21" connectableBus="B46___21" p="667.26220732875413" q="137.46587337482984"/>
+        </iidm:voltageLevel>
+        <iidm:twoWindingsTransformer id="Tr46-4046" r="0" x="0.028571503236889839" g="0" b="0" ratedU1="400" ratedU2="20" bus1="4046_401" connectableBus1="4046_401" voltageLevelId1="4046_400" bus2="B46___21" connectableBus2="B46___21" voltageLevelId2="B46___20" p1="667.26287360138906" q1="209.1088268775334" p2="-667.26287360138883" q2="-137.46584133300047">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="22" targetDeadband="0" loadTapChangingCapabilities="true" regulating="true" targetV="20">
+                <iidm:terminalRef id="Tr46-4046" side="TWO"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.25"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2345678806304932"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2195122241973877"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2048193216323853"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1904761791229248"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1764705181121826"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1627906560897827"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1494252681732178"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1363636255264282"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1235954761505127"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1111111640930176"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0989010334014893"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0869565010070801"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0752688646316528"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.063829779624939"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.94339627027511597"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.93457937240600586"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.92592591047286987"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.91743117570877075"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90909087657928467"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90090090036392212"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.8928571343421936"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="40414.5"/>
+            <iidm:currentLimits2 permanentLimit="40414.5"/>
+        </iidm:twoWindingsTransformer>
+    </iidm:substation>
+    <iidm:substation id="_2b63dcac-a5cd-4a2f-9b11-6815f5407766" country="FR" tso="RTE">
+        <iidm:voltageLevel id="4047_400" nominalV="400" highVoltageLimit="420" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="4047_401" v="316.55463135398389" angle="-5.2838948340364276"/>
+            </iidm:busBreakerTopology>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="B47___20" nominalV="20" highVoltageLimit="21" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="B47___21" v="14.696469996606435" angle="-10.5891511746436"/>
+            </iidm:busBreakerTopology>
+            <iidm:load id="47_1" loadType="UNDEFINED" p0="140.01499999999999" q0="61.613999999999997" bus="B47___21" connectableBus="B47___21" p="103.40251827127275" q="33.604118398927824"/>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="BG15__15" nominalV="15" highVoltageLimit="15.750001907348633" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="BG15__11" v="13.655575501575598" angle="7.2453101514666303"/>
+            </iidm:busBreakerTopology>
+            <iidm:generator id="g15" energySource="THERMAL" minP="0" maxP="9999" voltageRegulatorOn="true" targetP="1080" targetV="15.682497978210449" targetQ="377.89999389648438" bus="BG15__11" connectableBus="BG15__11" p="-1190.8092838391706" q="-1271.7464698188289">
+                <iidm:property name="genreCvg" value="AUTRE"/>
+                <iidm:reactiveCapabilityCurve>
+                    <iidm:point p="0" minQ="-1200" maxQ="1200"/>
+                    <iidm:point p="9999" minQ="-1200" maxQ="1200"/>
+                </iidm:reactiveCapabilityCurve>
+            </iidm:generator>
+        </iidm:voltageLevel>
+        <iidm:twoWindingsTransformer id="Tr4047-g15" r="0" x="0.02812500111758709" g="0" b="0" ratedU1="400" ratedU2="15" bus1="4047_401" connectableBus1="4047_401" voltageLevelId1="4047_400" bus2="BG15__11" connectableBus2="BG15__11" voltageLevelId2="BG15__15" p1="-1190.8092838391703" q1="-813.93826250152961" p2="1190.8092838391703" q2="1271.7464698188287">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="10" loadTapChangingCapabilities="false">
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="46188"/>
+            <iidm:currentLimits2 permanentLimit="46188"/>
+        </iidm:twoWindingsTransformer>
+        <iidm:twoWindingsTransformer id="Tr47-4047" r="0" x="0.20000001788139343" g="0" b="0" ratedU1="400" ratedU2="20" bus1="4047_401" connectableBus1="4047_401" voltageLevelId1="4047_400" bus2="B47___21" connectableBus2="B47___21" voltageLevelId2="B47___20" p1="103.40256893771782" q1="44.550467160798831" p2="-103.40256893771786" q2="-33.604095675688271">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="24" targetDeadband="0" loadTapChangingCapabilities="true" regulating="true" targetV="20">
+                <iidm:terminalRef id="Tr47-4047" side="TWO"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.25"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2345678806304932"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2195122241973877"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2048193216323853"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1904761791229248"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1764705181121826"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1627906560897827"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1494252681732178"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1363636255264282"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1235954761505127"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1111111640930176"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0989010334014893"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0869565010070801"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0752688646316528"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.063829779624939"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.94339627027511597"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.93457937240600586"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.92592591047286987"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.91743117570877075"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90909087657928467"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90090090036392212"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.8928571343421936"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="5773.5"/>
+            <iidm:currentLimits2 permanentLimit="5773.5"/>
+        </iidm:twoWindingsTransformer>
+    </iidm:substation>
+    <iidm:substation id="_02dfeaeb-18de-4cb0-aaba-8231a11626da" country="FR" tso="RTE">
+        <iidm:voltageLevel id="4051_400" nominalV="400" highVoltageLimit="420" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="4051_401" v="307.67550200552233" angle="-28.418178843142851"/>
+            </iidm:busBreakerTopology>
+            <iidm:shunt id="4051-Cap" sectionCount="1" voltageRegulatorOn="false" bus="4051_401" connectableBus="4051_401" q="-59.165132761525072">
+                <iidm:property name="qMax" value="100"/>
+                <iidm:shuntLinearModel bPerSection="0.00062499998603016138" maximumSectionCount="1"/>
+            </iidm:shunt>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="B51___20" nominalV="20" highVoltageLimit="21" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="B51___21" v="14.260283813937708" angle="-33.913552205092167"/>
+            </iidm:busBreakerTopology>
+            <iidm:load id="51_1" loadType="UNDEFINED" p0="1120" q0="361.48000000000002" bus="B51___21" connectableBus="B51___21" p="800.33130469775472" q="184.58135818916537"/>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="BG16__15" nominalV="15" highVoltageLimit="15.750001907348633" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="BG16__11" v="13.628615128321696" angle="-15.454250349357146"/>
+            </iidm:busBreakerTopology>
+            <iidm:generator id="g16" energySource="THERMAL" minP="0" maxP="9999" voltageRegulatorOn="true" targetP="600" targetV="15.796499252319336" targetQ="222.60000610351562" bus="BG16__11" connectableBus="BG16__11" p="-696.80789134625888" q="-825.46921569268022">
+                <iidm:property name="genreCvg" value="AUTRE"/>
+                <iidm:reactiveCapabilityCurve>
+                    <iidm:point p="0" minQ="-700" maxQ="700"/>
+                    <iidm:point p="9999" minQ="-700" maxQ="700"/>
+                </iidm:reactiveCapabilityCurve>
+            </iidm:generator>
+        </iidm:voltageLevel>
+        <iidm:twoWindingsTransformer id="Tr4051-g16" r="0" x="0.048214271664619446" g="0" b="0" ratedU1="400" ratedU2="15" bus1="4051_401" connectableBus1="4051_401" voltageLevelId1="4051_400" bus2="BG16__11" connectableBus2="BG16__11" voltageLevelId2="BG16__15" p1="-696.80789134625877" q1="-522.55411098416062" p2="696.80789134625877" q2="825.46921569268022">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="10" loadTapChangingCapabilities="false">
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="26943"/>
+            <iidm:currentLimits2 permanentLimit="26943"/>
+        </iidm:twoWindingsTransformer>
+        <iidm:twoWindingsTransformer id="Tr51-4051" r="0" x="0.025000002235174179" g="0" b="0" ratedU1="400" ratedU2="20" bus1="4051_401" connectableBus1="4051_401" voltageLevelId1="4051_400" bus2="B51___21" connectableBus2="B51___21" voltageLevelId2="B51___20" p1="800.33218432963463" q1="267.51518309082246" p2="-800.33218432963406" q2="-184.58143802618642">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="25" targetDeadband="0" loadTapChangingCapabilities="true" regulating="true" targetV="20">
+                <iidm:terminalRef id="Tr51-4051" side="TWO"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.25"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2345678806304932"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2195122241973877"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2048193216323853"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1904761791229248"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1764705181121826"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1627906560897827"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1494252681732178"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1363636255264282"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1235954761505127"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1111111640930176"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0989010334014893"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0869565010070801"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0752688646316528"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.063829779624939"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.94339627027511597"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.93457937240600586"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.92592591047286987"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.91743117570877075"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90909087657928467"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90090090036392212"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.8928571343421936"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="46188"/>
+            <iidm:currentLimits2 permanentLimit="46188"/>
+        </iidm:twoWindingsTransformer>
+    </iidm:substation>
+    <iidm:substation id="_61a3cd8c-5bc4-4036-a6db-63948c1aa705" country="FR" tso="RTE">
+        <iidm:voltageLevel id="4061_400" nominalV="400" highVoltageLimit="420" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="4061_401" v="291.13584045328378" angle="-0.14511619431558195"/>
+            </iidm:busBreakerTopology>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="B61___20" nominalV="20" highVoltageLimit="21" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="B61___21" v="13.823072095532918" angle="-5.8594634541793287"/>
+            </iidm:busBreakerTopology>
+            <iidm:load id="61_1" loadType="UNDEFINED" p0="700" q0="171.5" bus="B61___21" connectableBus="B61___21" p="486.29153472508227" q="82.767809860846555"/>
+        </iidm:voltageLevel>
+        <iidm:twoWindingsTransformer id="Tr61-4061" r="0" x="0.040000002831220627" g="0" b="0" ratedU1="400" ratedU2="20" bus1="4061_401" connectableBus1="4061_401" voltageLevelId1="4061_400" bus2="B61___21" connectableBus2="B61___21" voltageLevelId2="B61___20" p1="486.29163688826083" q1="133.70617954651104" p2="-486.29163688826071" q2="-82.767627398683857">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="23" targetDeadband="0" loadTapChangingCapabilities="true" regulating="true" targetV="20">
+                <iidm:terminalRef id="Tr61-4061" side="TWO"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.25"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2345678806304932"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2195122241973877"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2048193216323853"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1904761791229248"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1764705181121826"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1627906560897827"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1494252681732178"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1363636255264282"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1235954761505127"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1111111640930176"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0989010334014893"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0869565010070801"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0752688646316528"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.063829779624939"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.94339627027511597"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.93457937240600586"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.92592591047286987"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.91743117570877075"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90909087657928467"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90090090036392212"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.8928571343421936"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="28867.5"/>
+            <iidm:currentLimits2 permanentLimit="28867.5"/>
+        </iidm:twoWindingsTransformer>
+    </iidm:substation>
+    <iidm:substation id="_685429c1-6416-4272-98bf-8787446f6086" country="FR" tso="RTE">
+        <iidm:voltageLevel id="4062_400" nominalV="400" highVoltageLimit="420" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="4062_401" v="312.0980554835507" angle="7.2657763183176227"/>
+            </iidm:busBreakerTopology>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="B62___20" nominalV="20" highVoltageLimit="21" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="B62___21" v="14.652827669422695" angle="1.9126710520478656"/>
+            </iidm:busBreakerTopology>
+            <iidm:load id="62_1" loadType="UNDEFINED" p0="420.041" q0="117.343" bus="B62___21" connectableBus="B62___21" p="307.67416253606785" q="62.958717704050962"/>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="BG17__15" nominalV="15" highVoltageLimit="15.750001907348633" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="BG17__11" v="12.387567626011531" angle="20.637457803980478"/>
+            </iidm:busBreakerTopology>
+            <iidm:generator id="g17" energySource="THERMAL" minP="0" maxP="9999" voltageRegulatorOn="true" targetP="530" targetV="15.137999534606934" targetQ="48.700000762939453" bus="BG17__11" connectableBus="BG17__11" p="-567.68885776378079" q="-339.88890651908196">
+                <iidm:property name="genreCvg" value="AUTRE"/>
+                <iidm:reactiveCapabilityCurve>
+                    <iidm:point p="0" minQ="-600" maxQ="600"/>
+                    <iidm:point p="9999" minQ="-600" maxQ="600"/>
+                </iidm:reactiveCapabilityCurve>
+            </iidm:generator>
+        </iidm:voltageLevel>
+        <iidm:twoWindingsTransformer id="Tr4061-g17" r="0" x="0.056250002235174179" g="0" b="0" ratedU1="400" ratedU2="15" bus1="4062_401" connectableBus1="4062_401" voltageLevelId1="4062_400" bus2="BG17__11" connectableBus2="BG17__11" voltageLevelId2="BG17__15" p1="-567.6888577637809" q1="-179.4087380341939" p2="567.6888577637809" q2="339.8889065190815">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="10" loadTapChangingCapabilities="false">
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="23094"/>
+            <iidm:currentLimits2 permanentLimit="23094"/>
+        </iidm:twoWindingsTransformer>
+        <iidm:twoWindingsTransformer id="Tr62-4062" r="0" x="0.066666744649410248" g="0" b="0" ratedU1="400" ratedU2="20" bus1="4062_401" connectableBus1="4062_401" voltageLevelId1="4062_400" bus2="B62___21" connectableBus2="B62___21" voltageLevelId2="B62___20" p1="307.67419566747839" q1="93.5827349119442" p2="-307.67419566747833" q2="-62.958652804401439">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="24" targetDeadband="0" loadTapChangingCapabilities="true" regulating="true" targetV="20">
+                <iidm:terminalRef id="Tr62-4062" side="TWO"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.25"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2345678806304932"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2195122241973877"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2048193216323853"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1904761791229248"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1764705181121826"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1627906560897827"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1494252681732178"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1363636255264282"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1235954761505127"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1111111640930176"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0989010334014893"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0869565010070801"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0752688646316528"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.063829779624939"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.94339627027511597"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.93457937240600586"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.92592591047286987"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.91743117570877075"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90909087657928467"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90090090036392212"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.8928571343421936"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="17320.5"/>
+            <iidm:currentLimits2 permanentLimit="17320.5"/>
+        </iidm:twoWindingsTransformer>
+    </iidm:substation>
+    <iidm:substation id="_0a362a77-8b1b-445f-b6d3-5cc81318c2ad" country="FR" tso="RTE">
+        <iidm:voltageLevel id="4063_400" nominalV="400" highVoltageLimit="420" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="4063_401" v="326.88604179426943" angle="13.859957172851773"/>
+            </iidm:busBreakerTopology>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="B63___20" nominalV="20" highVoltageLimit="21" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="B63___21" v="15.324376080967284" angle="8.794076540807259"/>
+            </iidm:busBreakerTopology>
+            <iidm:load id="63_1" loadType="UNDEFINED" p0="826.03399999999999" q0="370.46899999999999" bus="B63___21" connectableBus="B63___21" p="633.43342017049633" q="217.85020474678598"/>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="BG18__15" nominalV="15" highVoltageLimit="15.750001907348633" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="BG18__11" v="12.936281907519755" angle="26.111427712387872"/>
+            </iidm:busBreakerTopology>
+            <iidm:generator id="g18" energySource="THERMAL" minP="0" maxP="9999" voltageRegulatorOn="true" targetP="1060" targetV="15.460500717163086" targetQ="293.39999389648438" bus="BG18__11" connectableBus="BG18__11" p="-1139.4789615615016" q="-702.65682414840535">
+                <iidm:property name="genreCvg" value="AUTRE"/>
+                <iidm:reactiveCapabilityCurve>
+                    <iidm:point p="0" minQ="-1200" maxQ="1200"/>
+                    <iidm:point p="9999" minQ="-1200" maxQ="1200"/>
+                </iidm:reactiveCapabilityCurve>
+            </iidm:generator>
+        </iidm:voltageLevel>
+        <iidm:twoWindingsTransformer id="Tr4063-g18" r="0" x="0.02812500111758709" g="0" b="0" ratedU1="400" ratedU2="15" bus1="4063_401" connectableBus1="4063_401" voltageLevelId1="4063_400" bus2="BG18__11" connectableBus2="BG18__11" voltageLevelId2="BG18__15" p1="-1139.4789615615014" q1="-401.46354501307474" p2="1139.4789615615016" q2="702.65682414840546">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="10" loadTapChangingCapabilities="false">
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="46188"/>
+            <iidm:currentLimits2 permanentLimit="46188"/>
+        </iidm:twoWindingsTransformer>
+        <iidm:twoWindingsTransformer id="Tr63-4063" r="0" x="0.033898252993822098" g="0" b="0" ratedU1="400" ratedU2="20" bus1="4063_401" connectableBus1="4063_401" voltageLevelId1="4063_400" bus2="B63___21" connectableBus2="B63___21" voltageLevelId2="B63___20" p1="633.43344283385954" q1="282.61874724471971" p2="-633.4334428338592" q2="-217.85014792895288">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="23" targetDeadband="0" loadTapChangingCapabilities="true" regulating="true" targetV="20">
+                <iidm:terminalRef id="Tr63-4063" side="TWO"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.25"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2345678806304932"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2195122241973877"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2048193216323853"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1904761791229248"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1764705181121826"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1627906560897827"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1494252681732178"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1363636255264282"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1235954761505127"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1111111640930176"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0989010334014893"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0869565010070801"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0752688646316528"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.063829779624939"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.94339627027511597"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.93457937240600586"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.92592591047286987"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.91743117570877075"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90909087657928467"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90090090036392212"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.8928571343421936"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="34063.69921875"/>
+            <iidm:currentLimits2 permanentLimit="34063.69921875"/>
+        </iidm:twoWindingsTransformer>
+    </iidm:substation>
+    <iidm:substation id="_00453322-99ec-40c7-8f27-8630543b0717" country="FR" tso="RTE">
+        <iidm:voltageLevel id="4071_400" nominalV="400" highVoltageLimit="420" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="4071_401" v="398.67115392754368" angle="62.748738141974336"/>
+            </iidm:busBreakerTopology>
+            <iidm:shunt id="4071-Ind" sectionCount="1" voltageRegulatorOn="false" bus="4071_401" connectableBus="4071_401" q="397.34671355340674">
+                <iidm:property name="qMax" value="-400"/>
+                <iidm:shuntLinearModel bPerSection="-0.0024999999441206455" maximumSectionCount="1"/>
+            </iidm:shunt>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="B71___20" nominalV="20" highVoltageLimit="21" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="B71___21" v="18.934396772109213" angle="58.611994331612379"/>
+            </iidm:busBreakerTopology>
+            <iidm:load id="71_1" loadType="UNDEFINED" p0="419.98200000000003" q0="117.31" bus="B71___21" connectableBus="B71___21" p="396.50480076184368" q="104.56120510999443"/>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="BG19__15" nominalV="15" highVoltageLimit="15.750001907348633" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="BG19__11" v="15.269567963821505" angle="68.499852310043096"/>
+            </iidm:busBreakerTopology>
+            <iidm:generator id="g19" energySource="HYDRO" minP="0" maxP="9999" voltageRegulatorOn="true" targetP="300" targetV="15.449999809265137" targetQ="121.23999786376953" bus="BG19__11" connectableBus="BG19__11" p="-322.7599246357147" q="-249.51124621087976">
+                <iidm:property name="genreCvg" value="AUTRE"/>
+                <iidm:reactiveCapabilityCurve>
+                    <iidm:point p="0" minQ="-500" maxQ="500"/>
+                    <iidm:point p="9999" minQ="-500" maxQ="500"/>
+                </iidm:reactiveCapabilityCurve>
+            </iidm:generator>
+        </iidm:voltageLevel>
+        <iidm:twoWindingsTransformer id="Tr4071-g19" r="0" x="0.067500002682209015" g="0" b="0" ratedU1="400" ratedU2="15" bus1="4071_401" connectableBus1="4071_401" voltageLevelId1="4071_400" bus2="BG19__11" connectableBus2="BG19__11" voltageLevelId2="BG19__15" p1="-322.75992463094059" q1="-201.32961896195641" p2="322.7599246309403" q2="249.51124621087993">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="10" loadTapChangingCapabilities="false">
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="19245"/>
+            <iidm:currentLimits2 permanentLimit="19245"/>
+        </iidm:twoWindingsTransformer>
+        <iidm:twoWindingsTransformer id="Tr71-4071" r="0" x="0.066666744649410248" g="0" b="0" ratedU1="400" ratedU2="20" bus1="4071_401" connectableBus1="4071_401" voltageLevelId1="4071_400" bus2="B71___21" connectableBus2="B71___21" voltageLevelId2="B71___20" p1="396.5048008025376" q1="135.82925901315642" p2="-396.5048008025376" q2="-104.5612048385735">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="23" targetDeadband="0" loadTapChangingCapabilities="true" regulating="true" targetV="20">
+                <iidm:terminalRef id="Tr71-4071" side="TWO"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.25"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2345678806304932"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2195122241973877"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2048193216323853"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1904761791229248"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1764705181121826"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1627906560897827"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1494252681732178"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1363636255264282"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1235954761505127"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1111111640930176"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0989010334014893"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0869565010070801"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0752688646316528"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.063829779624939"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.94339627027511597"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.93457937240600586"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.92592591047286987"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.91743117570877075"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90909087657928467"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90090090036392212"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.8928571343421936"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="17320.5"/>
+            <iidm:currentLimits2 permanentLimit="17320.5"/>
+        </iidm:twoWindingsTransformer>
+    </iidm:substation>
+    <iidm:substation id="_a70aa2ee-439d-4ba7-87b3-f2eb5f8b8aa6" country="FR" tso="RTE">
+        <iidm:voltageLevel id="4072_400" nominalV="400" highVoltageLimit="420" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="4072_401" v="413.5129360385622" angle="59.657905910416311"/>
+            </iidm:busBreakerTopology>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="B72___20" nominalV="20" highVoltageLimit="21" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="B72___21" v="19.371065454628965" angle="55.57030192584299"/>
+            </iidm:busBreakerTopology>
+            <iidm:load id="72_1" loadType="UNDEFINED" p0="2800.0100000000002" q0="554.54300000000001" bus="B72___21" connectableBus="B72___21" p="2718.9487766798825" q="522.89936499611406"/>
+        </iidm:voltageLevel>
+        <iidm:voltageLevel id="BG20__15" nominalV="15" highVoltageLimit="15.750001907348633" topologyKind="BUS_BREAKER">
+            <iidm:busBreakerTopology>
+                <iidm:bus id="BG20__11" v="15.175134530303088" angle="64.223453110413644"/>
+            </iidm:busBreakerTopology>
+            <iidm:generator id="g20" energySource="HYDRO" minP="0" maxP="9999" voltageRegulatorOn="true" targetP="2138.199951171875" targetV="15.277500152587891" targetQ="377.44100952148438" bus="BG20__11" connectableBus="BG20__11" p="-2378.5547386375665" q="-917.94529929824444">
+                <iidm:property name="genreCvg" value="AUTRE"/>
+                <iidm:reactiveCapabilityCurve>
+                    <iidm:point p="0" minQ="-4500" maxQ="4500"/>
+                    <iidm:point p="9999" minQ="-4500" maxQ="4500"/>
+                </iidm:reactiveCapabilityCurve>
+            </iidm:generator>
+        </iidm:voltageLevel>
+        <iidm:twoWindingsTransformer id="Tr4072-g20" r="0" x="0.0074999956414103508" g="0" b="0" ratedU1="400" ratedU2="15" bus1="4072_401" connectableBus1="4072_401" voltageLevelId1="4072_400" bus2="BG20__11" connectableBus2="BG20__11" voltageLevelId2="BG20__15" p1="-2378.5547386299454" q1="-706.24618684766494" p2="2378.5547386299449" q2="917.94529929824319">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="10" loadTapChangingCapabilities="false">
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="173205"/>
+            <iidm:currentLimits2 permanentLimit="173205"/>
+        </iidm:twoWindingsTransformer>
+        <iidm:twoWindingsTransformer id="Tr72-4072" r="0" x="0.010000000707805157" g="0" b="0" ratedU1="400" ratedU2="20" bus1="4072_401" connectableBus1="4072_401" voltageLevelId1="4072_400" bus2="B72___21" connectableBus2="B72___21" voltageLevelId2="B72___20" p1="2718.9487767435048" q1="727.1991191274243" p2="-2718.9487767435053" q2="-522.89936468456494">
+            <iidm:ratioTapChanger lowTapPosition="0" tapPosition="25" targetDeadband="0" loadTapChangingCapabilities="true" regulating="true" targetV="20">
+                <iidm:terminalRef id="Tr72-4072" side="TWO"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.25"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2345678806304932"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2195122241973877"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.2048193216323853"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1904761791229248"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1764705181121826"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1627906560897827"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1494252681732178"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1363636255264282"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1235954761505127"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.1111111640930176"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0989010334014893"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0869565010070801"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0752688646316528"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.063829779624939"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0526316165924072"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0416667461395264"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0309277772903442"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0204081535339355"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1.0101009607315063"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="1"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.99009901285171509"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.98039215803146362"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.97087383270263672"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.96153849363327026"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.95238101482391357"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.94339627027511597"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.93457937240600586"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.92592591047286987"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.91743117570877075"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90909087657928467"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.90090090036392212"/>
+                <iidm:step r="0" x="0" g="0" b="0" rho="0.8928571343421936"/>
+            </iidm:ratioTapChanger>
+            <iidm:currentLimits1 permanentLimit="115470"/>
+            <iidm:currentLimits2 permanentLimit="115470"/>
+        </iidm:twoWindingsTransformer>
+    </iidm:substation>
+    <iidm:line id="L1011-1013a" r="1.6899999999999999" x="11.83" g1="0" b1="4.0840986912371591e-05" g2="0" b2="4.0840986912371591e-05" bus1="1011_131" connectableBus1="1011_131" voltageLevelId1="1011_130" bus2="1013_131" connectableBus2="1013_131" voltageLevelId2="1013_130" p1="-216.53160584447591" q1="27.820578305369498" p2="221.7640142355128" q2="7.527515002379598">
+        <iidm:currentLimits1 permanentLimit="1549.9998779296875"/>
+        <iidm:currentLimits2 permanentLimit="1549.9998779296875"/>
+    </iidm:line>
+    <iidm:line id="L1011-1013b" r="1.6899999999999999" x="11.83" g1="0" b1="4.0840986912371591e-05" g2="0" b2="4.0840986912371591e-05" bus1="1011_131" connectableBus1="1011_131" voltageLevelId1="1011_130" bus2="1013_131" connectableBus2="1013_131" voltageLevelId2="1013_130" p1="-216.53160584447591" q1="27.820578305369498" p2="221.7640142355128" q2="7.527515002379598">
+        <iidm:currentLimits1 permanentLimit="1549.9998779296875"/>
+        <iidm:currentLimits2 permanentLimit="1549.9998779296875"/>
+    </iidm:line>
+    <iidm:line id="L1012-1014a" r="2.3700000000000001" x="15.210000000000001" g1="0" b1="5.3406984079629183e-05" g2="0" b2="5.3406984079629183e-05" bus1="1014_131" connectableBus1="1014_131" voltageLevelId1="1014_130" bus2="1012_131" connectableBus2="1012_131" voltageLevelId2="1012_130" p1="169.3761722940236" q1="-0.73957746818730519" p2="-165.20032981622788" q2="25.820611455236413">
+        <iidm:currentLimits1 permanentLimit="1549.9998779296875"/>
+        <iidm:currentLimits2 permanentLimit="1549.9998779296875"/>
+    </iidm:line>
+    <iidm:line id="L1012-1014b" r="2.3700000000000001" x="15.210000000000001" g1="0" b1="5.3406984079629183e-05" g2="0" b2="5.3406984079629183e-05" bus1="1014_131" connectableBus1="1014_131" voltageLevelId1="1014_130" bus2="1012_131" connectableBus2="1012_131" voltageLevelId2="1012_130" p1="169.3761722940236" q1="-0.73957746818730519" p2="-165.20032981622788" q2="25.820611455236413">
+        <iidm:currentLimits1 permanentLimit="1549.9998779296875"/>
+        <iidm:currentLimits2 permanentLimit="1549.9998779296875"/>
+    </iidm:line>
+    <iidm:line id="L1013-1014a" r="1.1799999999999999" x="8.4499999999999993" g1="0" b1="2.9844990422134288e-05" g2="0" b2="2.9844990422134288e-05" bus1="1013_131" connectableBus1="1013_131" voltageLevelId1="1013_130" bus2="1014_131" connectableBus2="1014_131" voltageLevelId2="1014_130" p1="-121.16928068260742" q1="-1.8371095873007115" p2="122.25862374330769" q2="8.6772656458796913">
+        <iidm:currentLimits1 permanentLimit="1549.9998779296875"/>
+        <iidm:currentLimits2 permanentLimit="1549.9998779296875"/>
+    </iidm:line>
+    <iidm:line id="L1013-1014b" r="1.1799999999999999" x="8.4499999999999993" g1="0" b1="2.9844990422134288e-05" g2="0" b2="2.9844990422134288e-05" bus1="1013_131" connectableBus1="1013_131" voltageLevelId1="1013_130" bus2="1014_131" connectableBus2="1014_131" voltageLevelId2="1014_130" p1="-121.16928068260742" q1="-1.8371095873007115" p2="122.25862374330769" q2="8.6772656458796913">
+        <iidm:currentLimits1 permanentLimit="1549.9998779296875"/>
+        <iidm:currentLimits2 permanentLimit="1549.9998779296875"/>
+    </iidm:line>
+    <iidm:line id="L1021-1022a" r="5.0700000000000003" x="33.799999999999997" g1="0" b1="8.9534980361349881e-05" g2="0" b2="8.9534980361349881e-05" bus1="1022_131" connectableBus1="1022_131" voltageLevelId1="1022_130" bus2="1021_131" connectableBus2="1021_131" voltageLevelId2="1021_130" p1="-197.17625615801236" q1="86.898638594830146" p2="215.7653027491092" q2="34.721348862918823">
+        <iidm:currentLimits1 permanentLimit="1549.9998779296875"/>
+        <iidm:currentLimits2 permanentLimit="1549.9998779296875"/>
+    </iidm:line>
+    <iidm:line id="L1021-1022b" r="5.0700000000000003" x="33.799999999999997" g1="0" b1="8.9534980361349881e-05" g2="0" b2="8.9534980361349881e-05" bus1="1022_131" connectableBus1="1022_131" voltageLevelId1="1022_130" bus2="1021_131" connectableBus2="1021_131" voltageLevelId2="1021_130" p1="-197.17625615801236" q1="86.898638594830146" p2="215.7653027491092" q2="34.721348862918823">
+        <iidm:currentLimits1 permanentLimit="1549.9998779296875"/>
+        <iidm:currentLimits2 permanentLimit="1549.9998779296875"/>
+    </iidm:line>
+    <iidm:line id="L1041-1043a" r="1.6899999999999999" x="10.140000000000001" g1="0" b1="3.6127992643741891e-05" g2="0" b2="3.6127992643741891e-05" bus1="1041_131" connectableBus1="1041_131" voltageLevelId1="1041_130" bus2="1043_131" connectableBus2="1043_131" voltageLevelId2="1043_130" p1="-123.37683228883809" q1="-22.979082182091521" p2="128.33935823531789" q2="52.323928517820242">
+        <iidm:currentLimits1 permanentLimit="1549.9998779296875"/>
+        <iidm:currentLimits2 permanentLimit="1549.9998779296875"/>
+    </iidm:line>
+    <iidm:line id="L1041-1043b" r="1.6899999999999999" x="10.140000000000001" g1="0" b1="3.6127992643741891e-05" g2="0" b2="3.6127992643741891e-05" bus1="1041_131" connectableBus1="1041_131" voltageLevelId1="1041_130" bus2="1043_131" connectableBus2="1043_131" voltageLevelId2="1043_130" p1="-123.37683228883809" q1="-22.979082182091521" p2="128.33935823531789" q2="52.323928517820242">
+        <iidm:currentLimits1 permanentLimit="1549.9998779296875"/>
+        <iidm:currentLimits2 permanentLimit="1549.9998779296875"/>
+    </iidm:line>
+    <iidm:line id="L1041-1045a" r="2.5299999999999998" x="20.280000000000001" g1="0" b1="7.3826988227665424e-05" g2="0" b2="7.3826988227665424e-05" bus1="1041_131" connectableBus1="1041_131" voltageLevelId1="1041_130" bus2="1045_131" connectableBus2="1045_131" voltageLevelId2="1045_130" p1="-107.59869414340901" q1="1.2413161092947766" p2="113.06404842729634" q2="41.674501477628041">
+        <iidm:currentLimits1 permanentLimit="1549.9998779296875"/>
+        <iidm:currentLimits2 permanentLimit="1549.9998779296875"/>
+    </iidm:line>
+    <iidm:line id="L1041-1045b" r="2.5299999999999998" x="20.280000000000001" g1="0" b1="7.3826988227665424e-05" g2="0" b2="7.3826988227665424e-05" bus1="1045_131" connectableBus1="1045_131" voltageLevelId1="1045_130" bus2="1041_131" connectableBus2="1041_131" voltageLevelId2="1041_130" p1="113.06404842729631" q1="41.674501477628027" p2="-107.59869414340899" q2="1.2413161092947878">
+        <iidm:currentLimits1 permanentLimit="1549.9998779296875"/>
+        <iidm:currentLimits2 permanentLimit="1549.9998779296875"/>
+    </iidm:line>
+    <iidm:line id="L1042-1044a" r="6.4199999999999999" x="47.32" g1="0" b1="0.00017749995458871126" g2="0" b2="0.00017749995458871126" bus1="1044_131" connectableBus1="1044_131" voltageLevelId1="1044_130" bus2="1042_131" connectableBus2="1042_131" voltageLevelId2="1042_130" p1="-8.4261851606242892" q1="-36.252452375742052" p2="9.665219717510535" q2="42.307586533939421">
+        <iidm:currentLimits1 permanentLimit="1549.9998779296875"/>
+        <iidm:currentLimits2 permanentLimit="1549.9998779296875"/>
+    </iidm:line>
+    <iidm:line id="L1042-1044b" r="6.4199999999999999" x="47.32" g1="0" b1="0.00017749995458871126" g2="0" b2="0.00017749995458871126" bus1="1044_131" connectableBus1="1044_131" voltageLevelId1="1044_130" bus2="1042_131" connectableBus2="1042_131" voltageLevelId2="1042_130" p1="-8.4261851606242892" q1="-36.252452375742052" p2="9.665219717510535" q2="42.307586533939421">
+        <iidm:currentLimits1 permanentLimit="1549.9998779296875"/>
+        <iidm:currentLimits2 permanentLimit="1549.9998779296875"/>
+    </iidm:line>
+    <iidm:line id="L1042-1045" r="8.4499999999999993" x="50.700000000000003" g1="0" b1="0.00017749995458871126" g2="0" b2="0.00017749995458871126" bus1="1042_131" connectableBus1="1042_131" voltageLevelId1="1042_130" bus2="1045_131" connectableBus2="1045_131" voltageLevelId2="1045_130" p1="28.991561781696063" q1="37.177017702785193" p2="-27.105709622936335" q2="-28.940260195407568">
+        <iidm:currentLimits1 permanentLimit="1549.9998779296875"/>
+        <iidm:currentLimits2 permanentLimit="1549.9998779296875"/>
+    </iidm:line>
+    <iidm:line id="L1043-1044a" r="1.6899999999999999" x="13.52" g1="0" b1="4.712398731498979e-05" g2="0" b2="4.712398731498979e-05" bus1="1043_131" connectableBus1="1043_131" voltageLevelId1="1043_130" bus2="1044_131" connectableBus2="1044_131" voltageLevelId2="1044_130" p1="-132.53979777617948" q1="28.683443392144607" p2="137.28913662681137" q2="8.6851850903673427">
+        <iidm:currentLimits1 permanentLimit="1549.9998779296875"/>
+        <iidm:currentLimits2 permanentLimit="1549.9998779296875"/>
+    </iidm:line>
+    <iidm:line id="L1043-1044b" r="1.6899999999999999" x="13.52" g1="0" b1="4.712398731498979e-05" g2="0" b2="4.712398731498979e-05" bus1="1043_131" connectableBus1="1043_131" voltageLevelId1="1043_130" bus2="1044_131" connectableBus2="1044_131" voltageLevelId2="1044_130" p1="-132.53979777617948" q1="28.683443392144607" p2="137.28913662681137" q2="8.6851850903673427">
+        <iidm:currentLimits1 permanentLimit="1549.9998779296875"/>
+        <iidm:currentLimits2 permanentLimit="1549.9998779296875"/>
+    </iidm:line>
+    <iidm:line id="L2031-2032a" r="5.8099999999999996" x="43.560000000000002" g1="0" b1="1.5707999409642071e-05" g2="0" b2="1.5707999409642071e-05" bus1="2031_221" connectableBus1="2031_221" voltageLevelId1="2031_220" bus2="2032_221" connectableBus2="2032_221" voltageLevelId2="2032_220" p1="-242.1661003420999" q1="-64.097664580037005" p2="254.25882112534163" q2="153.62116186450572">
+        <iidm:currentLimits1 permanentLimit="1310"/>
+        <iidm:currentLimits2 permanentLimit="1310"/>
+    </iidm:line>
+    <iidm:line id="L2031-2032b" r="5.8099999999999996" x="43.560000000000002" g1="0" b1="1.5707999409642071e-05" g2="0" b2="1.5707999409642071e-05" bus1="2032_221" connectableBus1="2032_221" voltageLevelId1="2032_220" bus2="2031_221" connectableBus2="2031_221" voltageLevelId2="2031_220" p1="254.25882112534154" q1="153.62116186450567" p2="-242.16610034209981" q2="-64.097664580036962">
+        <iidm:currentLimits1 permanentLimit="1310"/>
+        <iidm:currentLimits2 permanentLimit="1310"/>
+    </iidm:line>
+    <iidm:line id="L4011-4012" r="1.6000000000000001" x="12.800000000000001" g1="0" b1="6.2831997638568282e-05" g2="0" b2="6.2831997638568282e-05" bus1="4011_401" connectableBus1="4011_401" voltageLevelId1="4011_400" bus2="4012_401" connectableBus2="4012_401" voltageLevelId2="4012_400" p1="-396.56290831356051" q1="-41.950823712131367" p2="398.43680641705544" q2="39.802485652294891">
+        <iidm:currentLimits1 permanentLimit="2020"/>
+        <iidm:currentLimits2 permanentLimit="2020"/>
+    </iidm:line>
+    <iidm:line id="L4011-4021" r="9.5999999999999996" x="96" g1="0" b1="0.00056234002113342285" g2="0" b2="0.00056234002113342285" bus1="4021_401" connectableBus1="4021_401" voltageLevelId1="4021_400" bus2="4011_401" connectableBus2="4011_401" voltageLevelId2="4011_400" p1="-634.57772257055365" q1="38.327298056164324" p2="672.13363977177232" q2="201.93265422703624">
+        <iidm:currentLimits1 permanentLimit="2020"/>
+        <iidm:currentLimits2 permanentLimit="2020"/>
+    </iidm:line>
+    <iidm:line id="L4011-4022" r="6.4000000000000004" x="64" g1="0" b1="0.00037542000063695014" g2="0" b2="0.00037542000063695014" bus1="4011_401" connectableBus1="4011_401" voltageLevelId1="4011_400" bus2="4022_401" connectableBus2="4022_401" voltageLevelId2="4022_400" p1="425.98589132535614" q1="180.58019173943421" p2="-414.86487464154482" q2="-160.44181189716292">
+        <iidm:currentLimits1 permanentLimit="2020"/>
+        <iidm:currentLimits2 permanentLimit="2020"/>
+    </iidm:line>
+    <iidm:line id="L4011-4071" r="8" x="72" g1="0" b1="0.0004382499901112169" g2="0" b2="0.0004382499901112169" bus1="4071_401" connectableBus1="4071_401" voltageLevelId1="4071_400" bus2="4011_401" connectableBus2="4011_401" voltageLevelId2="4011_400" p1="-181.90914245099975" q1="132.11286892833749" p2="185.62384077326547" q2="-227.60067593340327">
+        <iidm:currentLimits1 permanentLimit="2020"/>
+        <iidm:currentLimits2 permanentLimit="2020"/>
+    </iidm:line>
+    <iidm:line id="L4012-4022" r="6.4000000000000004" x="56" g1="0" b1="0.00032829999690875411" g2="0" b2="0.00032829999690875411" bus1="4012_401" connectableBus1="4012_401" voltageLevelId1="4012_400" bus2="4022_401" connectableBus2="4022_401" voltageLevelId2="4022_400" p1="575.14911151112494" q1="244.20981241373508" p2="-555.8618765160968" q2="-155.84937817378051">
+        <iidm:currentLimits1 permanentLimit="2020"/>
+        <iidm:currentLimits2 permanentLimit="2020"/>
+    </iidm:line>
+    <iidm:line id="L4012-4071" r="8" x="80" g1="0" b1="0.0004681000136770308" g2="0" b2="0.0004681000136770308" bus1="4071_401" connectableBus1="4071_401" voltageLevelId1="4071_400" bus2="4012_401" connectableBus2="4012_401" voltageLevelId2="4012_400" p1="-235.11717333544863" q1="105.01381598616848" p2="239.51983284940218" q2="-199.77443668344341">
+        <iidm:currentLimits1 permanentLimit="2020"/>
+        <iidm:currentLimits2 permanentLimit="2020"/>
+    </iidm:line>
+    <iidm:line id="L4021-4032" r="6.4000000000000004" x="64" g1="0" b1="0.00037542000063695014" g2="0" b2="0.00037542000063695014" bus1="4032_401" connectableBus1="4032_401" voltageLevelId1="4032_400" bus2="4021_401" connectableBus2="4021_401" voltageLevelId2="4021_400" p1="-227.95720559671918" q1="-76.423136875239408" p2="231.57427615386689" q2="37.412432636295165">
+        <iidm:currentLimits1 permanentLimit="2020"/>
+        <iidm:currentLimits2 permanentLimit="2020"/>
+    </iidm:line>
+    <iidm:line id="L4021-4042" r="16" x="96" g1="0" b1="0.00093777000438421965" g2="0" b2="0.00093777000438421965" bus1="4042_401" connectableBus1="4042_401" voltageLevelId1="4042_400" bus2="4021_401" connectableBus2="4021_401" voltageLevelId2="4021_400" p1="-559.7039150631017" q1="97.81120535692024" p2="628.29909606840556" q2="139.88778324578823">
+        <iidm:currentLimits1 permanentLimit="2020"/>
+        <iidm:currentLimits2 permanentLimit="2020"/>
+    </iidm:line>
+    <iidm:line id="L4022-4031a" r="6.4000000000000004" x="64" g1="0" b1="0.00037542000063695014" g2="0" b2="0.00037542000063695014" bus1="4031_401" connectableBus1="4031_401" voltageLevelId1="4031_400" bus2="4022_401" connectableBus2="4022_401" voltageLevelId2="4022_400" p1="-598.07602840328821" q1="60.939819986771937" p2="622.45695801555905" q2="106.38672213836897">
+        <iidm:currentLimits1 permanentLimit="2020"/>
+        <iidm:currentLimits2 permanentLimit="2020"/>
+    </iidm:line>
+    <iidm:line id="L4022-4031b" r="6.4000000000000004" x="64" g1="0" b1="0.00037542000063695014" g2="0" b2="0.00037542000063695014" bus1="4031_401" connectableBus1="4031_401" voltageLevelId1="4031_400" bus2="4022_401" connectableBus2="4022_401" voltageLevelId2="4022_400" p1="-598.07602840328821" q1="60.939819986771937" p2="622.45695801555905" q2="106.38672213836897">
+        <iidm:currentLimits1 permanentLimit="2020"/>
+        <iidm:currentLimits2 permanentLimit="2020"/>
+    </iidm:line>
+    <iidm:line id="L4031-4032" r="1.6000000000000001" x="16" g1="0" b1="9.4247996457852423e-05" g2="0" b2="9.4247996457852423e-05" bus1="4032_401" connectableBus1="4032_401" voltageLevelId1="4032_400" bus2="4031_401" connectableBus2="4031_401" voltageLevelId2="4031_400" p1="-478.2042434005964" q1="12.126486315000573" p2="482.06760933083962" q2="8.4811529134309893">
+        <iidm:currentLimits1 permanentLimit="2020"/>
+        <iidm:currentLimits2 permanentLimit="2020"/>
+    </iidm:line>
+    <iidm:line id="L4031-4041a" r="9.5999999999999996" x="64" g1="0" b1="0.00074927002424374223" g2="0" b2="0.00074927002424374223" bus1="4031_401" connectableBus1="4031_401" voltageLevelId1="4031_400" bus2="4041_401" connectableBus2="4041_401" voltageLevelId2="4041_400" p1="679.96247092439125" q1="114.00361329484032" p2="-630.45142079454558" q2="83.110899583811133">
+        <iidm:currentLimits1 permanentLimit="2020"/>
+        <iidm:currentLimits2 permanentLimit="2020"/>
+    </iidm:line>
+    <iidm:line id="L4031-4041b" r="9.5999999999999996" x="64" g1="0" b1="0.00074927002424374223" g2="0" b2="0.00074927002424374223" bus1="4031_401" connectableBus1="4031_401" voltageLevelId1="4031_400" bus2="4041_401" connectableBus2="4041_401" voltageLevelId2="4041_400" p1="679.96247092439125" q1="114.00361329484032" p2="-630.45142079454558" q2="83.110899583811133">
+        <iidm:currentLimits1 permanentLimit="2020"/>
+        <iidm:currentLimits2 permanentLimit="2020"/>
+    </iidm:line>
+    <iidm:line id="L4032-4042" r="16" x="64" g1="0" b1="0.00062518002232536674" g2="0" b2="0.00062518002232536674" bus1="4032_401" connectableBus1="4032_401" voltageLevelId1="4032_400" bus2="4042_401" connectableBus2="4042_401" voltageLevelId2="4042_400" p1="706.1614489973158" q1="64.296650560239812" p2="-619.50234426826137" q2="172.97581775712797">
+        <iidm:currentLimits1 permanentLimit="2020"/>
+        <iidm:currentLimits2 permanentLimit="2020"/>
+    </iidm:line>
+    <iidm:line id="L4032-4044" r="9.5999999999999996" x="80" g1="0" b1="0.00074927002424374223" g2="0" b2="0.00074927002424374223" connectableBus1="4032_401" voltageLevelId1="4032_400" connectableBus2="4044_401" voltageLevelId2="4044_400" p1="0" q1="0" p2="0" q2="0">
+        <iidm:currentLimits1 permanentLimit="2020"/>
+        <iidm:currentLimits2 permanentLimit="2020"/>
+    </iidm:line>
+    <iidm:line id="L4041-4044" r="4.7999999999999998" x="48" g1="0" b1="0.00028117001056671143" g2="0" b2="0.00028117001056671143" bus1="4041_401" connectableBus1="4041_401" voltageLevelId1="4041_400" bus2="4044_401" connectableBus2="4044_401" voltageLevelId2="4044_400" p1="631.97975950277612" q1="155.97337424814262" p2="-606.44325783480258" q2="56.84714731669829">
+        <iidm:currentLimits1 permanentLimit="2020"/>
+        <iidm:currentLimits2 permanentLimit="2020"/>
+    </iidm:line>
+    <iidm:line id="L4041-4061" r="9.5999999999999996" x="72" g1="0" b1="0.00040684000123292208" g2="0" b2="0.00040684000123292208" bus1="4041_401" connectableBus1="4041_401" voltageLevelId1="4041_400" bus2="4061_401" connectableBus2="4061_401" voltageLevelId2="4061_400" p1="108.67419035819988" q1="-67.163694705617431" p2="-107.1375703924041" q2="11.21771112899614">
+        <iidm:currentLimits1 permanentLimit="2020"/>
+        <iidm:currentLimits2 permanentLimit="2020"/>
+    </iidm:line>
+    <iidm:line id="L4042-4043" r="3.2000000000000002" x="24" g1="0" b1="0.00015551000251434743" g2="0" b2="0.00015551000251434743" bus1="4042_401" connectableBus1="4042_401" voltageLevelId1="4042_400" bus2="4043_401" connectableBus2="4043_401" voltageLevelId2="4043_400" p1="757.96628662895444" q1="45.048830293650369" p2="-734.86547029436451" q2="103.83826646830929">
+        <iidm:currentLimits1 permanentLimit="2020"/>
+        <iidm:currentLimits2 permanentLimit="2020"/>
+    </iidm:line>
+    <iidm:line id="L4042-4044" r="3.2000000000000002" x="32" g1="0" b1="0.00018693000311031938" g2="0" b2="0.00018693000311031938" bus1="4042_401" connectableBus1="4042_401" voltageLevelId1="4042_400" bus2="4044_401" connectableBus2="4044_401" voltageLevelId2="4044_400" p1="697.07713808375183" q1="173.91190139676254" p2="-676.22431086902077" q2="6.5258309519660829">
+        <iidm:currentLimits1 permanentLimit="2020"/>
+        <iidm:currentLimits2 permanentLimit="2020"/>
+    </iidm:line>
+    <iidm:line id="L4043-4044" r="1.6000000000000001" x="16" g1="0" b1="9.4247996457852423e-05" g2="0" b2="9.4247996457852423e-05" bus1="4043_401" connectableBus1="4043_401" voltageLevelId1="4043_400" bus2="4044_401" connectableBus2="4044_401" voltageLevelId2="4044_400" p1="301.18870357302069" q1="176.7489499672995" p2="-298.58902823421454" q2="-164.59669140618428">
+        <iidm:currentLimits1 permanentLimit="2020"/>
+        <iidm:currentLimits2 permanentLimit="2020"/>
+    </iidm:line>
+    <iidm:line id="L4043-4046" r="1.6000000000000001" x="16" g1="0" b1="9.4247996457852423e-05" g2="0" b2="9.4247996457852423e-05" bus1="4046_401" connectableBus1="4046_401" voltageLevelId1="4046_400" bus2="4043_401" connectableBus2="4043_401" voltageLevelId2="4043_400" p1="-40.216273963015773" q1="138.96493750190947" p2="40.671968998697089" q2="-149.28168580245867">
+        <iidm:currentLimits1 permanentLimit="2020"/>
+        <iidm:currentLimits2 permanentLimit="2020"/>
+    </iidm:line>
+    <iidm:line id="L4043-4047" r="3.2000000000000002" x="32" g1="0" b1="0.00018693000311031938" g2="0" b2="0.00018693000311031938" bus1="4043_401" connectableBus1="4043_401" voltageLevelId1="4043_400" bus2="4047_401" connectableBus2="4047_401" voltageLevelId2="4047_400" p1="-439.93385458797763" q1="-282.28374385267443" p2="451.00953382287912" q2="359.97833348632639">
+        <iidm:currentLimits1 permanentLimit="2020"/>
+        <iidm:currentLimits2 permanentLimit="2020"/>
+    </iidm:line>
+    <iidm:line id="L4044-4045a" r="3.2000000000000002" x="32" g1="0" b1="0.00018693000311031938" g2="0" b2="0.00018693000311031938" bus1="4045_401" connectableBus1="4045_401" voltageLevelId1="4045_400" bus2="4044_401" connectableBus2="4044_401" voltageLevelId2="4044_400" p1="-293.11554543815271" q1="70.526730151861599" p2="297.22486480509366" q2="-56.097107141833824">
+        <iidm:currentLimits1 permanentLimit="2020"/>
+        <iidm:currentLimits2 permanentLimit="2020"/>
+    </iidm:line>
+    <iidm:line id="L4044-4045b" r="3.2000000000000002" x="32" g1="0" b1="0.00018693000311031938" g2="0" b2="0.00018693000311031938" bus1="4045_401" connectableBus1="4045_401" voltageLevelId1="4045_400" bus2="4044_401" connectableBus2="4044_401" voltageLevelId2="4044_400" p1="-293.11554543815271" q1="70.526730151861599" p2="297.22486480509366" q2="-56.097107141833824">
+        <iidm:currentLimits1 permanentLimit="2020"/>
+        <iidm:currentLimits2 permanentLimit="2020"/>
+    </iidm:line>
+    <iidm:line id="L4045-4051a" r="6.4000000000000004" x="64" g1="0" b1="0.00037542000063695014" g2="0" b2="0.00037542000063695014" bus1="4045_401" connectableBus1="4045_401" voltageLevelId1="4045_400" bus2="4051_401" connectableBus2="4051_401" voltageLevelId2="4051_400" p1="54.452232478709625" q1="-192.92327502642186" p2="-51.762146491687652" q2="157.10203032743203">
+        <iidm:currentLimits1 permanentLimit="2020"/>
+        <iidm:currentLimits2 permanentLimit="2020"/>
+    </iidm:line>
+    <iidm:line id="L4045-4051b" r="6.4000000000000004" x="64" g1="0" b1="0.00037542000063695014" g2="0" b2="0.00037542000063695014" bus1="4051_401" connectableBus1="4051_401" voltageLevelId1="4051_400" bus2="4045_401" connectableBus2="4045_401" voltageLevelId2="4045_400" p1="-51.762146491687645" q1="157.10203032743215" p2="54.452232478709647" q2="-192.923275026422">
+        <iidm:currentLimits1 permanentLimit="2020"/>
+        <iidm:currentLimits2 permanentLimit="2020"/>
+    </iidm:line>
+    <iidm:line id="L4045-4062" r="17.600000000000001" x="128" g1="0" b1="0.00074927002424374223" g2="0" b2="0.00074927002424374223" bus1="4045_401" connectableBus1="4045_401" voltageLevelId1="4045_400" bus2="4062_401" connectableBus2="4062_401" voltageLevelId2="4062_400" p1="-344.63537177265567" q1="5.6907078976565995" p2="374.3788633962431" q2="83.389949181722002">
+        <iidm:currentLimits1 permanentLimit="2020"/>
+        <iidm:currentLimits2 permanentLimit="2020"/>
+    </iidm:line>
+    <iidm:line id="L4046-4047" r="1.6000000000000001" x="24" g1="0" b1="0.00015551000251434743" g2="0" b2="0.00015551000251434743" bus1="4046_401" connectableBus1="4046_401" voltageLevelId1="4046_400" bus2="4047_401" connectableBus2="4047_401" voltageLevelId2="4047_400" p1="-627.0465996383723" q1="-297.35383563380424" p2="636.39718107857334" q2="409.40946185440373">
+        <iidm:currentLimits1 permanentLimit="2020"/>
+        <iidm:currentLimits2 permanentLimit="2020"/>
+    </iidm:line>
+    <iidm:line id="L4061-4062" r="3.2000000000000002" x="32" g1="0" b1="0.00018693000311031938" g2="0" b2="0.00018693000311031938" bus1="4061_401" connectableBus1="4061_401" voltageLevelId1="4061_400" bus2="4062_401" connectableBus2="4062_401" voltageLevelId2="4062_400" p1="-379.1540664958568" q1="-144.92389067550877" p2="385.2104789703817" q2="171.43586021655426">
+        <iidm:currentLimits1 permanentLimit="2020"/>
+        <iidm:currentLimits2 permanentLimit="2020"/>
+    </iidm:line>
+    <iidm:line id="L4062-4063a" r="4.7999999999999998" x="48" g1="0" b1="0.00028117001056671143" g2="0" b2="0.00028117001056671143" bus1="4063_401" connectableBus1="4063_401" voltageLevelId1="4063_400" bus2="4062_401" connectableBus2="4062_401" voltageLevelId2="4062_400" p1="253.02275936382114" q1="59.422398884177341" p2="-249.78734013516117" q2="-84.499903138012726">
+        <iidm:currentLimits1 permanentLimit="2020"/>
+        <iidm:currentLimits2 permanentLimit="2020"/>
+    </iidm:line>
+    <iidm:line id="L4062-4063b" r="4.7999999999999998" x="48" g1="0" b1="0.00028117001056671143" g2="0" b2="0.00028117001056671143" bus1="4063_401" connectableBus1="4063_401" voltageLevelId1="4063_400" bus2="4062_401" connectableBus2="4062_401" voltageLevelId2="4062_400" p1="253.02275936382114" q1="59.422398884177341" p2="-249.78734013516117" q2="-84.499903138012726">
+        <iidm:currentLimits1 permanentLimit="2020"/>
+        <iidm:currentLimits2 permanentLimit="2020"/>
+    </iidm:line>
+    <iidm:line id="L4071-4072a" r="4.7999999999999998" x="48" g1="0" b1="0.00093777000438421965" g2="0" b2="0.00093777000438421965" bus1="4071_401" connectableBus1="4071_401" voltageLevelId1="4071_400" bus2="4072_401" connectableBus2="4072_401" voltageLevelId2="4072_400" p1="171.64071980742474" q1="-284.48651925955704" p2="-170.19701905678028" q2="-10.476466139876406">
+        <iidm:currentLimits1 permanentLimit="2020"/>
+        <iidm:currentLimits2 permanentLimit="2020"/>
+    </iidm:line>
+    <iidm:line id="L4071-4072b" r="4.7999999999999998" x="48" g1="0" b1="0.00093777000438421965" g2="0" b2="0.00093777000438421965" bus1="4071_401" connectableBus1="4071_401" voltageLevelId1="4071_400" bus2="4072_401" connectableBus2="4072_401" voltageLevelId2="4072_400" p1="171.64071980742474" q1="-284.48651925955704" p2="-170.19701905678028" q2="-10.476466139876406">
+        <iidm:currentLimits1 permanentLimit="2020"/>
+        <iidm:currentLimits2 permanentLimit="2020"/>
+    </iidm:line>
+</iidm:network>
