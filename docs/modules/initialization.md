@@ -33,7 +33,7 @@ Runs a **steady-state Dynawo initialization** per operating point (no contingenc
 
 ## Jobs file behaviour
 
-Comments or uncomments `Events.dyd` in the jobs network section so initialization runs **without** fault events, then restores contingency-ready state for contingency simulation.
+Comments out `Events.dyd` in the jobs modeler section when that line exists (so initialization runs without fault events), then restores the original jobs file. If `Events.dyd` is not listed in jobs, only `stopTime` is patched for the init run.
 
 ## Notes
 

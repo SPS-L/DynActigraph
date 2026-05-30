@@ -25,10 +25,6 @@ EVENTS_DYD_LINE_RE = re.compile(
     rf'^(\s*)(<{_XML_TAG_PREFIX}dynModels\s+dydFile="Events\.dyd"\s*/>)\s*$',
     re.MULTILINE,
 )
-EVENTS_DYD_COMMENTED_RE = re.compile(
-    rf'^(\s*)<!--\s*(<{_XML_TAG_PREFIX}dynModels\s+dydFile="Events\.dyd"\s*/>)\s*-->\s*$',
-    re.MULTILINE,
-)
 SIMULATION_TAG_RE = re.compile(
     rf"<({_XML_TAG_PREFIX}simulation)\s+([^>]+)>",
     re.MULTILINE,
@@ -86,16 +82,12 @@ def network_iidm_path(jobs_path: Path, op_dir: Path) -> Path:
 
 
 def patch_jobs_for_init(content: str, stop_time: float) -> str:
-    """Comment Events.dyd and set stopTime on the first ``<simulation>`` tag."""
+    """Comment Events.dyd when present and set stopTime on the first ``<simulation>`` tag."""
     if EVENTS_DYD_LINE_RE.search(content):
         content = EVENTS_DYD_LINE_RE.sub(
             r"\1<!-- \2 -->",
             content,
             count=1,
-        )
-    elif not EVENTS_DYD_COMMENTED_RE.search(content):
-        raise RuntimeError(
-            'No active or commented dynModels line with dydFile="Events.dyd" found'
         )
 
     stop_time_str = f"{float(stop_time):g}"
