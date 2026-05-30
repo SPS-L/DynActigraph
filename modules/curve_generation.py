@@ -10,6 +10,21 @@ from typing import Optional
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
 
+# Dynawo jobs XML may use unprefixed tags or namespace prefixes (e.g. dyn:curves).
+_XML_TAG_PREFIX = r"(?:[\w-]+:)?"
+CURVES_LINE_RE = re.compile(
+    rf'^(\s*)<{_XML_TAG_PREFIX}curves\s+[^>]*/>\s*$',
+    re.MULTILINE,
+)
+LOGS_TAG_RE = re.compile(
+    rf'^(\s*)(<{_XML_TAG_PREFIX}logs\b)',
+    re.MULTILINE,
+)
+OUTPUTS_CLOSE_RE = re.compile(
+    rf'^(\s*)(</{_XML_TAG_PREFIX}outputs>)',
+    re.MULTILINE,
+)
+
 from .dyd_mapping import build_generator_static_to_dynamic_map
 from .paths import INPUTS_DIR
 DYNAWO_NS = "http://www.rte-france.com/dynawo"
@@ -172,30 +187,43 @@ def generate_curve_xml(
     output_path.write_bytes(pretty_xml)
 
 
-def update_jobs_curve_reference(jobs_path: Path) -> None:
-    """Ensure jobs file has <curves inputFile="fic_CRV.xml" exportMode="XML"/>."""
-    tree = ET.parse(jobs_path)
-    root = tree.getroot()
-    namespace = root.tag.split("}", 1)[0][1:] if root.tag.startswith("{") else ""
-    ns = {"dynawo": namespace} if namespace else {}
-    outputs_path = ".//dynawo:outputs" if namespace else ".//outputs"
-    curves_path = "dynawo:curves" if namespace else "curves"
+def jobs_tag_prefix(content: str) -> str:
+    """Return ``dyn:`` when the jobs file uses prefixed Dynawo tags, else ``''``."""
+    if re.search(r"<dyn:", content) or re.search(r'xmlns:dyn\s*=', content):
+        return "dyn:"
+    return ""
 
-    outputs = root.find(outputs_path, ns)
-    if outputs is None:
-        raise RuntimeError(f"No <outputs> element found in {jobs_path}")
 
-    curves = outputs.find(curves_path, ns)
-    if curves is None:
-        tag = f"{{{namespace}}}curves" if namespace else "curves"
-        curves = ET.SubElement(outputs, tag)
+def patch_jobs_curve_reference(content: str, curve_file: str) -> str:
+    """Add or update the curves export tag, preserving jobs-file formatting."""
+    prefix = jobs_tag_prefix(content)
+    curves_tag = f'{prefix}curves inputFile="{curve_file}" exportMode="XML"'
 
-    curves.attrib.clear()
-    curves.set("inputFile", "fic_CRV.xml")
-    curves.set("exportMode", "XML")
+    curves_match = CURVES_LINE_RE.search(content)
+    if curves_match:
+        indent = curves_match.group(1)
+        return CURVES_LINE_RE.sub(f"{indent}<{curves_tag}/>", content, count=1)
 
-    ET.register_namespace("", namespace) if namespace else None
-    tree.write(jobs_path, encoding="UTF-8", xml_declaration=True)
+    logs_match = LOGS_TAG_RE.search(content)
+    if logs_match:
+        indent = logs_match.group(1)
+        insertion = f"{indent}<{curves_tag}/>\n"
+        return content[: logs_match.start()] + insertion + content[logs_match.start() :]
+
+    outputs_close = OUTPUTS_CLOSE_RE.search(content)
+    if outputs_close:
+        indent = outputs_close.group(1)
+        insertion = f"{indent}<{curves_tag}/>\n"
+        return content[: outputs_close.start()] + insertion + content[outputs_close.start() :]
+
+    raise RuntimeError("No <curves>, <logs>, or </outputs> element found in jobs file")
+
+
+def update_jobs_curve_reference(jobs_path: Path, curve_file: str = "fic_CRV.xml") -> None:
+    """Ensure jobs file references the generated curve export file."""
+    original = jobs_path.read_text(encoding="utf-8")
+    patched = patch_jobs_curve_reference(original, curve_file=curve_file)
+    jobs_path.write_text(patched, encoding="utf-8")
 
 
 def generate_curves_for_operating_point(op_dir: Path) -> Path:
@@ -220,7 +248,7 @@ def generate_curves_for_operating_point(op_dir: Path) -> Path:
     )
 
     for jobs_path in find_jobs_files(op_dir):
-        update_jobs_curve_reference(jobs_path)
+        update_jobs_curve_reference(jobs_path, curve_file=output_path.name)
 
     print(
         f"{op_dir.name}: wrote {output_path.name} "

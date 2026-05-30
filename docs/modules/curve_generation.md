@@ -19,7 +19,7 @@ Per `data/inputs/operating_point_N/`:
 ## Outputs
 
 - `fic_CRV.xml` in each OP folder
-- In-place edit of `*.jobs` → `<curves inputFile="fic_CRV.xml" exportMode="XML"/>`
+- In-place edit of `*.jobs` → `<curves inputFile="fic_CRV.xml" exportMode="XML"/>` (unprefixed jobs) or `<dyn:curves inputFile="fic_CRV.xml" exportMode="XML"/>` (prefixed `dyn:` jobs)
 
 ## Main API
 

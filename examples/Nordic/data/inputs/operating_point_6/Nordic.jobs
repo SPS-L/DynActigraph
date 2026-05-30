@@ -25,7 +25,6 @@
         <dyn:outputs directory="outputs">
             <dyn:timeline exportMode="XML"/>
             <dyn:finalState exportIIDMFile="true" exportDumpFile="false"/>
-            <dyn:curves inputFile="Nordic.crv" exportMode="CSV"/>
             <dyn:logs>
                 <dyn:appender tag="" file="dynawaltz.log" lvlFilter="INFO"/>
             </dyn:logs>
