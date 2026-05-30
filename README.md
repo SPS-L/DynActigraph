@@ -181,33 +181,106 @@ examples/Nordic/
 
 Follow [Environment setup](#environment-setup) (venv or Conda, `pip install -r requirements.txt`, Dynawo installed).
 
-### Step 2 — Point `config.yaml` at the example data
+### Step 2 — Configure `config.yaml` (quick smoke test)
 
-Edit the project-root `config.yaml`:
+Copy the block below into the project-root [`config.yaml`](config.yaml). Replace the two placeholder paths with **absolute** paths on your machine, then save:
 
-1. Set **`dynawo.path`** to your Dynawo environment script (e.g. `/path/to/dynawo/deploy/gcc11/shared/dynawo.sh` or `myEnvDynawo.sh`).
-2. Set **`data.path`** to the **absolute** path of `examples/Nordic/data`:
+- **`dynawo.path`** — your Dynawo environment script (e.g. `/path/to/dynawo/dynawo.sh` or `myEnvDynawo.sh`).
+- **`data.path`** — the **absolute** path of `examples/Nordic/data`.
+
+This is a minimal end-to-end run: `optuna.n_trials: 1`, `training.epochs: 2`, and fixed hyperparameters. For a full study, increase `optuna.n_trials`, widen `optuna.hparams`, and raise `training.epochs`; see the [`config.yaml`](#configyaml) reference table for all keys.
 
 ```yaml
+# Configuration for DynActigraph scripts.
+#
+# Quick smoke test defaults for the bundled Nordic example (examples/Nordic/data).
+# Before running main.py, set dynawo.path and data.path to absolute paths on your machine.
+
+dynactigraph:
+  version: 1
+
 dynawo:
   path: "/absolute/path/to/myEnvDynawo.sh"
 
 data:
   path: "/absolute/path/to/DynActigraph/examples/Nordic/data"
+
+simulation:
+  event_time: 10.0
+  initialization_duration: 10.0  # steady-state init per OP before contingencies; use 0 to skip
+
+network:
+  country_filter: []
+
+kpi:
+  window_sec: 5.0
+  step_sec: 1.0
+  class_bins:
+    voltage:
+      cuts: [0.33, 0.66]  # 3 severity bins on [0, 1] + 1 flag class => model.num_classes: 4
+    spower:
+      cuts: [0.33, 0.66]
+
+model:
+  num_classes: 4
+
+training:
+  epochs: 30          # keep low for a quick smoke test
+  patience: 8
+  batch_size: 16
+  split_mode: operating_point
+  seed: 42
+  training: 0.8
+  validation: 0.1
+  testing: 0.1
+  high_class_threshold: null
+
+optuna:
+  n_trials: 5
+  hparams:
+    hidden_dim:
+      type: categorical
+      choices: [64, 128, 256]
+    num_layers:
+      type: int
+      low: 2
+      high: 4
+    hidden_channels:
+      type: categorical
+      choices: [16, 32, 64]
+    num_heads:
+      type: categorical
+      choices: [1, 2, 4, 8]
+    dropout:
+      type: float
+      low: 0.1
+      high: 0.5
+    num_gnn_layers:
+      type: int
+      low: 2
+      high: 4
+    lr:
+      type: float
+      low: 1.0e-4
+      high: 5.0e-3
+      log: true
+    weight_decay:
+      type: float
+      low: 1.0e-6
+      high: 1.0e-3
+      log: true
+    under_penalty_lambda:
+      type: float
+      low: 0.0
+      high: 2.0
+    coral_prediction_threshold:
+      type: float
+      low: 0.3
+      high: 0.7
+
+inference:
+  initialization_duration: 10.0  # steady-state run before graph build; use 0 to skip
 ```
-
-3. Fill in the remaining keys listed in [`config.yaml`](#configyaml) (simulation times, KPI windows, class bins, training split, Optuna trials, etc.). Every numeric field in the template must be set before `main.py` runs.
-
-Typical starting points for this case (adjust to your study):
-
-| Key | Suggested value | Notes |
-|-----|-----------------|-------|
-| `simulation.event_time` | `10.0` | Fault time (s) |
-| `simulation.initialization_duration` | `30.0` or `0` | Steady-state init per OP; `0` skips init |
-| `kpi.window_sec` / `kpi.step_sec` | e.g. `5.0` / `1.0` | KPI sliding window |
-| `model.num_classes` | `4` | Severity levels |
-| `training.split_mode` | `operating_point` | Split by OP folder |
-| `optuna.n_trials` | `1` or more | Use `1` for a quick smoke test |
 
 ### Step 3 — Run from the project root
 
