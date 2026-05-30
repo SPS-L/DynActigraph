@@ -2,6 +2,7 @@
 # Copyright (c) 2026 Sustainable Power Systems Laboratory (https://sps-lab.org/)
 # Part of DynActigraph: Dynawo contingency event file generation
 
+import re
 from pathlib import Path
 from typing import Optional, Union
 
@@ -12,9 +13,26 @@ except ModuleNotFoundError:  # pragma: no cover
 
 
 try:
+    from .curve_generation import jobs_tag_prefix
     from .paths import CONFIG_PATH
 except ImportError:  # pragma: no cover
+    from curve_generation import jobs_tag_prefix
     from paths import CONFIG_PATH
+
+# Dynawo jobs XML may use unprefixed tags or namespace prefixes (e.g. dyn:dynModels).
+_XML_TAG_PREFIX = r"(?:[\w-]+:)?"
+EVENTS_DYD_ACTIVE_RE = re.compile(
+    rf'^(\s*)<{_XML_TAG_PREFIX}dynModels\s+dydFile="Events\.dyd"\s*/>\s*$',
+    re.MULTILINE,
+)
+EVENTS_DYD_COMMENTED_RE = re.compile(
+    rf'^(\s*)<!--\s*(<{_XML_TAG_PREFIX}dynModels\s+dydFile="Events\.dyd"\s*/>)\s*-->\s*$',
+    re.MULTILINE,
+)
+FIRST_DYD_MODELS_RE = re.compile(
+    rf'^(\s*)<{_XML_TAG_PREFIX}dynModels\s+dydFile="[^"]+"\s*/>\s*$',
+    re.MULTILINE,
+)
 
 
 def default_event_time(config_path: Path = CONFIG_PATH) -> float:
@@ -22,7 +40,10 @@ def default_event_time(config_path: Path = CONFIG_PATH) -> float:
     if yaml is None or not config_path.exists():
         return 10.0
     config = yaml.safe_load(config_path.read_text(encoding="utf-8")) or {}
-    return float((config.get("simulation") or {}).get("event_time", 10.0))
+    raw = (config.get("simulation") or {}).get("event_time", 10.0)
+    if raw is None:
+        return 10.0
+    return float(raw)
 
 
 _ALLOWED_FAULT_TYPES = frozenset({
@@ -132,6 +153,44 @@ def build_par_single(
     return "\n".join(lines)
 
 
+def find_jobs_files(case_dir: Path) -> list[Path]:
+    return sorted(path for path in case_dir.iterdir() if path.is_file() and path.name.lower().endswith(".jobs"))
+
+
+def patch_jobs_events_reference(content: str) -> str:
+    """Ensure jobs file references ``Events.dyd`` inside ``<modeler>``, preserving formatting."""
+    prefix = jobs_tag_prefix(content)
+    events_tag = f'{prefix}dynModels dydFile="Events.dyd"'
+
+    active_match = EVENTS_DYD_ACTIVE_RE.search(content)
+    if active_match:
+        indent = active_match.group(1)
+        return EVENTS_DYD_ACTIVE_RE.sub(f"{indent}<{events_tag}/>", content, count=1)
+
+    commented_match = EVENTS_DYD_COMMENTED_RE.search(content)
+    if commented_match:
+        indent = commented_match.group(1)
+        return EVENTS_DYD_COMMENTED_RE.sub(f"{indent}<{events_tag}/>", content, count=1)
+
+    first_dyd_match = FIRST_DYD_MODELS_RE.search(content)
+    if first_dyd_match is None:
+        raise RuntimeError('No <dynModels dydFile="..."/> element found in jobs file')
+
+    line_end = content.find("\n", first_dyd_match.start())
+    insert_at = len(content) if line_end == -1 else line_end + 1
+    indent = first_dyd_match.group(1)
+    insertion = f"{indent}<{events_tag}/>\n"
+    return content[:insert_at] + insertion + content[insert_at:]
+
+
+def update_jobs_events_reference(jobs_path: Path) -> None:
+    """Add or update the Events.dyd reference in a jobs file."""
+    original = jobs_path.read_text(encoding="utf-8")
+    patched = patch_jobs_events_reference(original)
+    if patched != original:
+        jobs_path.write_text(patched, encoding="utf-8")
+
+
 def write_event_files(
     scenario_dir: Path,
     contingency_id: Union[int, str],
@@ -139,7 +198,7 @@ def write_event_files(
     fault_type: str,
     event_time: Optional[Union[int, float]] = None,
 ) -> None:
-    """Write Events.dyd and Events.par for a single contingency."""
+    """Write Events.dyd and Events.par for a single contingency and patch jobs files."""
     scenario_dir = Path(scenario_dir)
     (scenario_dir / "Events.dyd").write_text(
         build_dyd_single(fault_name, fault_type),
@@ -149,3 +208,5 @@ def write_event_files(
         build_par_single(contingency_id, fault_name, fault_type, event_time=event_time),
         encoding="utf-8",
     )
+    for jobs_path in find_jobs_files(scenario_dir):
+        update_jobs_events_reference(jobs_path)
