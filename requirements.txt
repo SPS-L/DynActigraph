@@ -16,6 +16,9 @@ fastdtw>=0.3.4
 pandas>=2.0
 plotly>=5.18
 
+# Power grid / IIDM (graph construction, electrical distance)
+pypowsybl>=1.0.0
+
 # ML / GNN (Training, Inference, modules/gradient_smoothing, etc.)
 torch>=2.0.0
 torch-geometric>=2.4.0
