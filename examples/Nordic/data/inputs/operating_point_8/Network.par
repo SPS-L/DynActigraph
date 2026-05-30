@@ -33,6 +33,5 @@
     <par type="DOUBLE" name="transformer_tNext_HT" value="10"/>
     <par type="DOUBLE" name="transformer_tNext_THT" value="10"/>
     <par type="DOUBLE" name="transformer_tolV" value="0.014999999700000001"/>
-    <par type="BOOL" name="4032_401_hasShortCircuitCapabilities" value="true"/>
   </set>
 </parametersSet>
