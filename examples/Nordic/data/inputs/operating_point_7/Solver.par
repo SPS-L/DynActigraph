@@ -18,7 +18,7 @@
     <par type="DOUBLE" name="fnormtolAlg" value="1e-3"/>
     <par type="DOUBLE" name="fnormtolAlgInit" value="1e-3"/>
     <par type="DOUBLE" name="fnormtolAlgJ" value="1e-3"/>
-    <par type="DOUBLE" name="hMax" value="2.0"/>
+    <par type="DOUBLE" name="hMax" value="1"/>
     <par type="DOUBLE" name="hMin" value="1.0E-6"/>
     <par type="DOUBLE" name="initialaddtol" value="1"/>
     <par type="DOUBLE" name="initialaddtolAlg" value="1"/>
@@ -27,12 +27,12 @@
     <par type="DOUBLE" name="kReduceStep" value="0.5"/>
     <par type="INT" name="maxNewtonTry" value="10"/>
     <par type="INT" name="maximumNumberSlowStepIncrease" value="40"/>
-    <par type="DOUBLE" name="minimalAcceptableStep" value="1.0"/>
+    <par type="DOUBLE" name="minimalAcceptableStep" value="0.5"/>
     <par type="STRING" name="minimumModeChangeTypeForAlgebraicRestoration" value="ALGEBRAIC_J_UPDATE"/>
     <par type="INT" name="msbset" value="0"/>
     <par type="INT" name="msbsetAlg" value="5"/>
     <par type="INT" name="msbsetAlgInit" value="1"/>
-    <par type="INT" name="msbsetAlgJ" value="1"/>
+    <par type="INT" name="msbsetAlgJ" value="5"/>
     <par type="INT" name="mxiter" value="15"/>
     <par type="INT" name="mxiterAlg" value="30"/>
     <par type="INT" name="mxiterAlgInit" value="50"/>

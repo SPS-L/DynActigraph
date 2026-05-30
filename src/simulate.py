@@ -32,18 +32,16 @@ from modules.initialization import (
 )
 from modules.paths import CONFIG_PATH, INPUTS_DIR, SIMULATIONS_DIR
 from modules.pipeline_logging import get_logger, get_pipeline_log_path, log_step_banner
+from modules.simulation_results import read_simulation_results, resolve_results_csv
 
 DEFAULT_CONFIG = CONFIG_PATH
 DYNAMO_NONLINEAR_ITERATION_WARN = "the maximum number of nonlinear iterations has been reached"
 
 
-SIMULATION_RESULTS_CSV = "simulation_results.csv"
-
-
-def resolve_results_csv(results_dir: Path) -> Path:
+def resolve_results_csv_path(results_dir: Path) -> Path:
     """Return the single simulation results CSV used for resume/skip across all OPs."""
     results_dir.mkdir(parents=True, exist_ok=True)
-    return results_dir / SIMULATION_RESULTS_CSV
+    return resolve_results_csv(results_dir)
 
 
 def load_config(config_path: Path) -> dict:
@@ -156,22 +154,6 @@ def create_scenario(
     copy_operating_point_contents(op_path, scenario_dir)
     write_event_files(scenario_dir, contingency_id, fault_name, fault_type)
     return scenario_dir
-
-
-def read_existing_results(results_csv: Path) -> dict[tuple[str, str], str]:
-    if not results_csv.exists():
-        return {}
-
-    results: dict[tuple[str, str], str] = {}
-    with results_csv.open("r", encoding="utf-8", newline="") as handle:
-        reader = csv.DictReader(handle)
-        for row in reader:
-            operating_point = row.get("Operating Point", "").strip()
-            contingency = row.get("Contingency", "").strip()
-            status = row.get("Status", "").strip()
-            if operating_point and contingency:
-                results[(operating_point, contingency)] = status
-    return results
 
 
 def write_result(results_csv: Path, operating_point: str, contingency: str, status: str) -> None:
@@ -314,8 +296,8 @@ def main() -> None:
     logger.info("Dynawo execution path: %s", execution_path)
     logger.info("DynActigraph version: %s", dynactigraph_version)
 
-    results_csv = resolve_results_csv(results_dir)
-    existing_results = read_existing_results(results_csv)
+    results_csv = resolve_results_csv_path(results_dir)
+    existing_results = read_simulation_results(results_csv)
     if existing_results:
         logger.info(
             "Loaded %d existing result(s) from %s; successful rows will be skipped.",

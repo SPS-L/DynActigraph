@@ -53,8 +53,18 @@ except ImportError:  # pragma: no cover
 
 try:
     from .paths import CONFIG_PATH, CONTINGENCIES_CSV, DISCONNECTIONS_DIR, SIMULATIONS_DIR
+    from .simulation_results import (
+        list_successful_contingency_dirs,
+        load_successful_runs,
+        resolve_results_csv,
+    )
 except ImportError:  # pragma: no cover
     from paths import CONFIG_PATH, CONTINGENCIES_CSV, DISCONNECTIONS_DIR, SIMULATIONS_DIR
+    from simulation_results import (
+        list_successful_contingency_dirs,
+        load_successful_runs,
+        resolve_results_csv,
+    )
 
 GENERATOR_DISCONNECT_MSG = "GENERATOR : disconnecting"
 VOLTAGE_ZERO_THRESHOLD = 0.05
@@ -330,14 +340,12 @@ def process_operating_point(
     *,
     output_dir: Path,
     country_filter: Optional[set[str]],
+    successful_runs: set[tuple[str, str]],
 ) -> tuple[Path, Path]:
     op_name = op_dir.name
-    contingency_dirs = sorted(
-        [path for path in op_dir.iterdir() if path.is_dir() and path.name.startswith("contingency_")],
-        key=lambda p: p.name,
-    )
+    contingency_dirs = list_successful_contingency_dirs(op_dir, successful_runs)
     if not contingency_dirs:
-        raise RuntimeError(f"No contingency folders found in {op_dir}")
+        raise RuntimeError(f"No successful contingency folders found in {op_dir}")
 
     case_order: list[str] = []
     voltage_flags_by_case: dict[str, set[str]] = {}
@@ -412,14 +420,24 @@ def process_operating_point(
 process_disconnections_operating_point = process_operating_point
 
 
-def run_disconnections_detection() -> list[tuple[Path, Path]]:
-    """Build disconnection CSVs for all operating points under Simulations_Scenarios/."""
+def run_disconnections_detection(*, successful_runs: Optional[set[tuple[str, str]]] = None) -> list[tuple[Path, Path]]:
+    """Build disconnection CSVs for successful simulations under Simulations_Scenarios/."""
     if not SIMULATIONS_DIR.exists():
         raise FileNotFoundError(f"Missing simulations folder: {SIMULATIONS_DIR}")
+
+    results_csv = resolve_results_csv(SIMULATIONS_DIR)
+    if successful_runs is None:
+        successful_runs = load_successful_runs(results_csv)
+    if not successful_runs:
+        raise RuntimeError(
+            f"No successful simulations found in {results_csv}. "
+            "Run simulate.py first and ensure at least one scenario succeeds."
+        )
 
     config = load_config()
     country_filter = get_country_filter(config)
     fault_map = build_contingency_fault_map()
+    print(f"Processing {len(successful_runs)} successful simulation(s) from {results_csv.name}")
     op_dirs = sorted(
         [path for path in SIMULATIONS_DIR.iterdir() if path.is_dir() and path.name.startswith("operating_point_")],
         key=op_sort_key,
@@ -429,14 +447,22 @@ def run_disconnections_detection() -> list[tuple[Path, Path]]:
 
     outputs: list[tuple[Path, Path]] = []
     for op_dir in op_dirs:
-        print(f"Processing {op_dir.name}")
+        contingency_dirs = list_successful_contingency_dirs(op_dir, successful_runs)
+        if not contingency_dirs:
+            print(f"Skipping {op_dir.name} (no successful simulations)")
+            continue
+
+        print(f"Processing {op_dir.name} ({len(contingency_dirs)} successful contingencies)")
         paths = process_operating_point(
             op_dir,
             fault_map,
             output_dir=DISCONNECTIONS_DIR,
             country_filter=country_filter,
+            successful_runs=successful_runs,
         )
         for path in paths:
             print(f"  Wrote {path}")
         outputs.append(paths)
+    if not outputs:
+        raise RuntimeError("No disconnection outputs were written for any operating point.")
     return outputs
