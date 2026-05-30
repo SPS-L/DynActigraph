@@ -12,7 +12,7 @@
     simulation tools for power systems.
 -->
 <dyn:jobs xmlns:dyn="http://www.rte-france.com/dynawo">
-    <dyn:job name="Nordic Test System with a fault, the tripping of a line and a voltage collapse">
+    <dyn:job name="Nordic Test System Operating Point 4">
         <dyn:solver lib="dynawo_SolverSIM" parFile="Solver.par" parId="Solver"/>
         <dyn:modeler compileDir="outputs/compilation">
             <dyn:network iidmFile="Nordic.xiidm" parFile="Network.par" parId="Network"/>
@@ -21,7 +21,7 @@
             <dyn:precompiledModels useStandardModels="true"/>
             <dyn:modelicaModels useStandardModels="false"/>
         </dyn:modeler>
-        <dyn:simulation startTime="0" stopTime="175"/>
+        <dyn:simulation startTime="0" stopTime="100"/>
         <dyn:outputs directory="outputs">
             <dyn:timeline exportMode="XML"/>
             <dyn:finalState exportIIDMFile="true" exportDumpFile="false"/>
