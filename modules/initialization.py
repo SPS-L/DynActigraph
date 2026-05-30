@@ -18,16 +18,25 @@ from modules.dynawo_runner import (
     write_simulation_log_header,
 )
 
+# Dynawo jobs XML may use unprefixed tags or namespace prefixes (e.g. dyn:network).
+_XML_TAG_PREFIX = r"(?:[\w-]+:)?"
+
 EVENTS_DYD_LINE_RE = re.compile(
-    r'^(\s*)<dynModels\s+dydFile="Events\.dyd"\s*/>\s*$',
+    rf'^(\s*)(<{_XML_TAG_PREFIX}dynModels\s+dydFile="Events\.dyd"\s*/>)\s*$',
     re.MULTILINE,
 )
 EVENTS_DYD_COMMENTED_RE = re.compile(
-    r'^(\s*)<!--\s*<dynModels\s+dydFile="Events\.dyd"\s*/>\s*-->\s*$',
+    rf'^(\s*)<!--\s*(<{_XML_TAG_PREFIX}dynModels\s+dydFile="Events\.dyd"\s*/>)\s*-->\s*$',
     re.MULTILINE,
 )
-SIMULATION_TAG_RE = re.compile(r"<simulation\s+([^>]+)>", re.MULTILINE)
-NETWORK_IIDM_RE = re.compile(r'<network\s+[^>]*\biidmFile="([^"]+)"', re.MULTILINE)
+SIMULATION_TAG_RE = re.compile(
+    rf"<({_XML_TAG_PREFIX}simulation)\s+([^>]+)>",
+    re.MULTILINE,
+)
+NETWORK_IIDM_RE = re.compile(
+    rf'<{_XML_TAG_PREFIX}network\s+[^>]*\biidmFile="([^"]+)"',
+    re.MULTILINE,
+)
 
 
 @dataclass(frozen=True)
@@ -80,17 +89,20 @@ def patch_jobs_for_init(content: str, stop_time: float) -> str:
     """Comment Events.dyd and set stopTime on the first ``<simulation>`` tag."""
     if EVENTS_DYD_LINE_RE.search(content):
         content = EVENTS_DYD_LINE_RE.sub(
-            r'\1<!-- <dynModels dydFile="Events.dyd"/> -->',
+            r"\1<!-- \2 -->",
             content,
             count=1,
         )
     elif not EVENTS_DYD_COMMENTED_RE.search(content):
-        raise RuntimeError('No active or commented <dynModels dydFile="Events.dyd"/> line found')
+        raise RuntimeError(
+            'No active or commented dynModels line with dydFile="Events.dyd" found'
+        )
 
     stop_time_str = f"{float(stop_time):g}"
 
     def repl(match: re.Match[str]) -> str:
-        attrs = match.group(1)
+        tag = match.group(1)
+        attrs = match.group(2)
         if re.search(r'\bstopTime\s*=\s*"[^"]*"', attrs):
             attrs = re.sub(
                 r'\bstopTime\s*=\s*"[^"]*"',
@@ -99,7 +111,7 @@ def patch_jobs_for_init(content: str, stop_time: float) -> str:
             )
         else:
             attrs = f'{attrs.strip()} stopTime="{stop_time_str}"'
-        return f"<simulation {attrs.strip()}>"
+        return f"<{tag} {attrs.strip()}>"
 
     new_content, count = SIMULATION_TAG_RE.subn(repl, content, count=1)
     if count == 0:
